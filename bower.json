@@ -1,0 +1,10 @@
+{
+  "name": "codedoc.academy",
+  "version": "0.0.1",
+  "dependencies": {
+    "webcomponentsjs": "Polymer/webcomponentsjs#master",
+    "google-apis": "PolymerLabs/google-apis#master",
+    "page": "visionmedia/page.js#master"
+  },
+  "devDependencies": {}
+}

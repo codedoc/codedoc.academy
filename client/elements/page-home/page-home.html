@@ -1,0 +1,50 @@
+<link rel="import" href="../part-header/part-header.html">
+<link rel="import" href="../part-jumbotron/part-jumbotron.html">
+<link rel="import" href="../part-footer/part-footer.html">
+<link rel="import" href="../part-description/part-description.html">
+<link rel="import" href="../google-analytics/google-analytics.html">
+<polymer-element name="page-home">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+    <part-header></part-header>
+    <part-jumbotron>
+      <h1>Codedoc Academy</h1>
+      <h2>La prima Code Academy in Italia</h2>
+    </part-jumbotron>
+    <part-description>
+      <h3>Cos'è una Code Academy?</h3>
+      <p>Una Code Academy è...</p>
+    </part-description>
+    <part-description>
+      <h3>Cosa imparerai?</h3>
+      <p>Imparerai...</p>
+    </part-description>
+    <part-description>
+      <h3>Ti interessa il progetto?</h3>
+      <p>Si, voglio imparare...</p>
+      <p>Si, voglio insegnare...</p>
+    </part-description>
+    <part-description>
+      <h3>Chi siamo?</h3>
+      <p>Enrico Marino e Federico Spini</p>
+    </part-description>
+    <part-description>
+      <h3>Quando si parte?</h3>
+      <p>La prima edizione è...</p>
+    </part-description>        
+    <part-footer></part-footer>
+    <google-analytics></google-analytics>
+
+  </template>
+  <script>
+    Polymer('page-home', {
+
+    });
+  </script>
+</polymer-element>
+
