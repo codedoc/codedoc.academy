@@ -1,10 +1,11 @@
-<polymer-element name="x-link">
+<polymer-element name="x-link" extends="a">
   <script>
     Polymer('x-link', {
 
       base: '',
 
       ready: function () {
+        console.log(this);
         this.addEventListener('click', this.prevent, false);
       },
 

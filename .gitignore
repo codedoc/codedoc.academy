@@ -10,6 +10,7 @@
 *.pid
 *.swp
 *.swo
+client/components
 node_modules
 coverage
 *.tgz

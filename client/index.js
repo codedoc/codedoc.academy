@@ -1,14 +1,13 @@
 var app = document.getElementById('app');
 
 var open = function (page_name, details) {
-  return function (context) {  
+  return function (context) {
     var element = document.createElement(page_name);
     context.element = element;
     while (app.firstChild) app.removeChild(app.firstChild);
     app.appendChild(element);
-    setTimeout(function () {
-      element.details = details;    
-    }, 10);
+    element.details = details;
+    scroll(0,0);
   };
 };
 
