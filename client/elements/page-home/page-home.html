@@ -12,12 +12,19 @@
       :host {
         display: block;
       }
+
+      part-jumbotron::shadow #jumbotron {
+        background-image: url('../../images/env.jpg');
+      }
+      part-jumbotron::shadow #container {
+        padding-top: 150px;
+      }
     </style>
 
-    <part-header></part-header>
+    <part-header id="header"></part-header>
     <part-jumbotron>
       <h1>Codedoc Academy</h1>
-      <h2>La prima Code Academy in Italia</h2>
+      <h2>Diventa uno sviluppatore Web professionista in 12 settimane</h2>
     </part-jumbotron>
     <part-description>
       <h3>Cos'è una Code Academy?</h3>
@@ -39,7 +46,7 @@
     <part-description>
       <h3>Quando si parte?</h3>
       <p>La prima edizione è...</p>
-    </part-description>        
+    </part-description>
     <part-form></part-form>
     <part-footer></part-footer>
     <!-- <google-analytics></google-analytics> -->
@@ -47,6 +54,10 @@
   </template>
   <script>
     Polymer('page-home', {
+
+      ready: function () {
+        this.$.header.brand = 'Codedoc Academy';
+      }
 
     });
   </script>

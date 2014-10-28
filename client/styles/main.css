@@ -13,3 +13,14 @@ html {
 body {
   margin-bottom: 80px;
 }
+
+html /deep/ part-jumbotron h1,
+html /deep/ part-jumbotron h2 {
+  text-align: center;
+}
+
+html /deep/ part-jumbotron h1 {
+  text-transform: capitalize;
+  font-size: 50px;
+  font-weight: 400;
+}
