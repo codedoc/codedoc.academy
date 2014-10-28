@@ -2,5 +2,25 @@
   "db": {
     "name": "db",
     "connector": "memory"
+  },
+  "mongodb": {
+    "name": "mongodb",
+    "connector": "mongodb"
+  },
+  "email": {
+    "name": "email",
+    "connector": "mail",
+    "transports": [
+      {
+        "type": "smtp",
+        "host": "smtp.gmail.com",
+        "secure": true,
+        "port": 465,
+        "auth": {
+          "user": "admin@codedoc.academy",
+          "pass": ""
+        }
+      }
+    ]
   }
 }

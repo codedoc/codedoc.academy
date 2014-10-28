@@ -1,0 +1,10 @@
+{
+  "name": "Gmail",
+  "plural": "Gmails",
+  "base": "Email",
+  "properties": {},
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}

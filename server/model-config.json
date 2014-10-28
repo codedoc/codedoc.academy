@@ -23,5 +23,13 @@
   "Role": {
     "dataSource": "db",
     "public": false
+  },
+  "Ping": {
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "Gmail": {
+    "dataSource": "email",
+    "public": false
   }
 }
