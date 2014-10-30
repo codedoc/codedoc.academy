@@ -18,7 +18,7 @@
     </core-ajax>
   </template>
   <script>
-    Polymer('part-form', {
+    Polymer('x-email', {
       
       type: 'email',
 
@@ -27,10 +27,13 @@
         var request = this.$.request;
         var data = {
           email: email.value,
-          ping_type: email.ping_type
+          type: email['ping-type']
         };
 
         if (email.validity.valid) {
+          console.log(data);
+          console.log(this.endpoint);
+
           request.params = JSON.stringify(data);
           request.go();
           console.log('done!');
