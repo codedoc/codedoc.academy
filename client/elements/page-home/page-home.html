@@ -3,6 +3,7 @@
 <link rel="import" href="../../components/x-link/x-link.html">
 <link rel="import" href="../part-header/part-header.html">
 <link rel="import" href="../part-footer/part-footer.html">
+<link rel="import" href="../x-email/x-email.html">
 <link rel="import" href="../x-texts/x-texts.html">
 <link rel="import" href="../x-parallax/x-parallax.html">
 <polymer-element name="page-home">
@@ -212,7 +213,9 @@
       <div class="container">
         <h3>Vuoi contribuire al progetto?</h3>
         <p>Lascia la tua email</p>
+        <x-email endpoint="/api/Pings" ping-type="collaborator"></x-email>
       </div>
+
       <div class="container">
         <h3>Ti piace il progetto?</h3>
         <p>Lascia la tua email, ti terremo aggiornato sugli sviluppi</p>
