@@ -1,0 +1,35 @@
+<link rel="import" href="../polymer/polymer.html">
+<polymer-element name="x-parallax">
+  <template>
+    <style>
+      :host {
+        display: block;
+        width: 100%;
+        height: 300px;
+        color: white;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center; 
+        background-image: url('../../images/env.jpg');
+        background-attachment: fixed;
+      }
+
+      #overlay {
+        height: 100%;
+        background-color: rgba(0,0,0,0.25);
+      }
+    </style>
+
+    <div id="overlay">
+      <div id="container" class="container">
+        <content select="*"></content>
+      </div>
+    </div>
+
+  </template>
+  <script>
+    Polymer('x-parallax', {
+
+    });
+  </script>
+</polymer-element>
