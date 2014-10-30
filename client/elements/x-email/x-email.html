@@ -1,0 +1,46 @@
+<link rel="import" href="../../components/core-ajax/core-ajax.html">
+<link rel="import" href="../../components/core-input/core-input.html">
+
+<polymer-element name="part-form" attributes="endpoint method type">
+  <template>
+    <style>
+    </style>
+
+     <div class="container">
+      <div class="col-md-10 col-md-push-1">
+        <core-input id="email" name="email" type="email"></core-input>
+        <core-ajax
+          id="request"
+          method="{{ method || 'POST' }}"
+          url="{{ endpoint }}"
+          handleAs="json"
+          on-core-response="{{handleResponse}}">
+        </core-ajax>
+      </div>
+    </div>
+
+
+
+  </template>
+  <script>
+    Polymer('part-form', {
+
+      send: function () {
+        var email = this.$.email;
+        var request = this.$.request;
+        var data = {
+          email: email.value,
+          type: this.type
+        };
+
+        if (email.validity.valid) {
+          request.params = JSON.stringify(data);
+          request.go();
+          console.log('done!');
+        } else {
+          console.error('There was an error');
+        }
+      }
+    });
+  </script>
+</polymer-element>

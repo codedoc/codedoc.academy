@@ -6,10 +6,7 @@
     "google-apis": "PolymerLabs/google-apis#master",
     "page": "visionmedia/page.js#master",
     "core-ajax": "Polymer/core-ajax#~0.4.2",
-    "paper-input": "Polymer/paper-input#~0.4.2",
-    "paper-button": "Polymer/paper-button#~0.4.2",
-    "core-icon": "Polymer/core-icon#~0.4.2",
-    "core-icons": "Polymer/core-icons#~0.4.2"
+    "core-input": "Polymer/core-input#~0.4.2"
   },
   "devDependencies": {}
 }
