@@ -1,20 +1,20 @@
-<link rel="import" href="../../components/x-header/x-header.html">
 <link rel="import" href="../../components/x-jumbotron/x-jumbotron.html">
 <link rel="import" href="../../components/x-ga/x-ga.html">
 <link rel="import" href="../../components/x-link/x-link.html">
-
+<link rel="import" href="../part-header/part-header.html">
+<link rel="import" href="../part-footer/part-footer.html">
 <link rel="import" href="../x-texts/x-texts.html">
-<polymer-element name="page-home" attributes="lang">
+<polymer-element name="page-home">
   <template>
     <style>
       :host {
         display: block;
       }
       
-      x-header::shadow #navbar {
+      part-header::shadow #navbar {
         background-color: transparent;
       }
-      x-header::shadow #navbar a {
+      part-header::shadow #navbar a {
         color: white;
       }
 
@@ -36,10 +36,10 @@
 
     <x-texts id="texts" url="/elements/page-home/texts/" language="it"></x-texts>
 
-    <x-header id="header"></x-header>
+    <part-header></part-header>
     <x-jumbotron>
-      <h1>{{ texts.title }}</h1>
-      <h2>{{ texts.subtitle }}</h2>
+      <h1>Diventa un Ingegnere Web in 12 settimane</h1>
+      <h2>Partecipa alla prima Code Academy in Italia</h2>
     </x-jumbotron>
 
     <section>
@@ -213,16 +213,6 @@
   </template>
   <script>
     Polymer('page-home', {
-
-      texts: {},
-
-      ready: function () {
-        this.$.texts.page = this;
-        this.$.header.brand = {
-          label: 'Codedoc Academy',
-          url: '/'
-        };
-      }
 
     });
   </script>
