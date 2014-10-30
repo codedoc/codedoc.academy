@@ -6,7 +6,13 @@
     "google-apis": "PolymerLabs/google-apis#master",
     "page": "visionmedia/page.js#master",
     "core-ajax": "Polymer/core-ajax#~0.4.2",
-    "core-input": "Polymer/core-input#~0.4.2"
+    "core-input": "Polymer/core-input#~0.4.2",
+    "x-header": "x-element/x-header#master",
+    "x-jumbotron": "x-element/x-jumbotron#master",
+    "x-link": "x-element/x-link#master",
+    "x-location": "x-element/x-location#master",
+    "x-bootstrap": "x-element/x-bootstrap#master",
+    "x-ga": "x-element/x-ga#master"
   },
   "devDependencies": {}
 }

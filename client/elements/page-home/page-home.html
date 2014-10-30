@@ -1,59 +1,227 @@
-<link rel="import" href="../part-header/part-header.html">
-<link rel="import" href="../part-jumbotron/part-jumbotron.html">
+<link rel="import" href="/components/x-header/x-header.html">
+<link rel="import" href="/components/x-jumbotron/x-jumbotron.html">
+<link rel="import" href="/components/x-ga/x-ga.html">
+<link rel="import" href="/components/x-link/x-link.html">
 <link rel="import" href="../part-footer/part-footer.html">
-<link rel="import" href="../part-description/part-description.html">
-<link rel="import" href="../google-analytics/google-analytics.html">
-
-<polymer-element name="page-home">
+<link rel="import" href="../x-texts/x-texts.html">
+<link rel="import" href="part-home-what.html">
+<polymer-element name="page-home" attributes="lang">
   <template>
     <style>
       :host {
         display: block;
       }
-
-      part-jumbotron::shadow #jumbotron {
-        background-image: url('../../images/env.jpg');
+      
+      x-header::shadow #navbar {
+        background-color: transparent;
       }
-      part-jumbotron::shadow #container {
+      x-header::shadow #navbar a {
+        color: white;
+      }
+
+      x-jumbotron::shadow #jumbotron {
+        background-image: url('../../images/env.jpg');
+        height: 400px;
+      }
+      x-jumbotron::shadow #container {
         padding-top: 150px;
+        text-align: center;
+      }
+
+      section {
+        padding-top: 20px;
+        padding-bottom: 40px;
+        border-bottom: 5px solid #efefef;
       }
     </style>
 
-    <part-header id="header"></part-header>
-    <part-jumbotron>
-      <h1>Codedoc Academy</h1>
-      <h2>Diventa uno sviluppatore Web professionista in 12 settimane</h2>
-    </part-jumbotron>
-    <part-description>
-      <h3>Cos'è una Code Academy?</h3>
-      <p>Una Code Academy è...</p>
-    </part-description>
-    <part-description>
-      <h3>Cosa imparerai?</h3>
-      <p>Imparerai...</p>
-    </part-description>
-    <part-description>
-      <h3>Ti interessa il progetto?</h3>
-      <p>Si, voglio imparare...</p>
-      <p>Si, voglio insegnare...</p>
-    </part-description>
-    <part-description>
-      <h3>Chi siamo?</h3>
-      <p>Enrico Marino e Federico Spini</p>
-    </part-description>
-    <part-description>
-      <h3>Quando si parte?</h3>
-      <p>La prima edizione è...</p>
-    </part-description>
+    <x-texts id="texts" url="/elements/page-home/texts/" language="it"></x-texts>
+
+    <x-header id="header"></x-header>
+    <x-jumbotron>
+      <h1>{{ texts.title }}</h1>
+      <h2>{{ texts.subtitle }}</h2>
+    </x-jumbotron>
+
+    <section>
+      <div class="container">
+        <h3>Quali sfide affronterai</h3>
+        <div>
+          <p>Lo sviluppo Web in un ecosistema JavaScript composto dalle più recenti tecnologie:</p>
+          <ul class="list-inline list-unstyled">
+            <li><a is="x-link" href="/glossary#javascript">JavaScript</a></li>
+            <li><a is="x-link" href="/glossary#html5">HTML5</a></li>
+            <li><a is="x-link" href="/glossary#css3">CSS3</a></li>
+          </ul>
+        </div>
+        <div>
+          <p>I più moderni e diffusi strumenti di <em>code revision</em>, piattaforme Web di <em>social coding</em>, e metodi di <em>sviluppo collaborativo</em>:</p>
+          <ul class="list-inline list-unstyled">
+            <li><a is="x-link" href="/glossary#git">git</a></li>
+            <li><a is="x-link" href="/glossary#github">GitHub</a></li>
+            <li><a is="x-link" href="/glossary#npm">npm</a></li>
+            <li><a is="x-link" href="/glossary#bower">Bower</a></li>
+            <li><a is="x-link" href="/glossary#gulp">Gulp</a></li>
+            <li><a is="x-link" href="/glossary#yeoman">Yeoman</a></li>
+            <li><a is="x-link" href="/glossary#duo">DUO</a></li>
+            <li><a is="x-link" href="/glossary#grunt">Grunt</a></li>
+          </ul>
+        </div>
+        <div>
+          <p>I <em>framework frontend</em> e le librerie JavaScript per una <em>user interface</em> e <em>user experience</em> avanzata:</p>
+          <ul class="list-inline list-unstyled">
+            <li><a is="x-link" href="/glossary#jquery">jQuery</a></li>
+            <li><a is="x-link" href="/glossary#bootstrap">Bootstrap</a></li>
+            <li><a is="x-link" href="/glossary#three">Three.js</a></li>
+            <li><a is="x-link" href="/glossary#raphael">Raphael.js</a></li>
+            <li><a is="x-link" href="/glossary#d3">D3.js</a></li>
+            <li><a is="x-link" href="/glossary#angular">Angular.js</a></li>        
+            <li><a is="x-link" href="/glossary#polymer">Polymer.js</a></li>
+          </ul>
+        </div>
+        <div>
+          <p>I <em>framework backend</em> più diffusi e più potenti, <em>database noSQL</em> leader di mercato, librerie JavaScript per la comunicazione realtime:</p>
+          <ul class="list-inline list-unstyled">
+            <li><a is="x-link" href="/glossary#node">Node.js</a></li>
+            <li><a is="x-link" href="/glossary#">Express.js</a></li>
+            <li><a is="x-link" href="/glossary#mongodb">MongoDB</a></li>
+            <li><a is="x-link" href="/glossary#loopback">LoopBack</a></li>
+            <li><a is="x-link" href="/glossary#">MongoDB</a></li>
+            <li><a is="x-link" href="/glossary#">Redis</a></li>
+            <li><a is="x-link" href="/glossary#">Socket.io</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h3>Com'è organizzato il corso</h3>
+        <div>
+          <p>
+            Il corso è intensivo: 
+            <ul class="list-inline list-unstyled">
+              <li>12 settimane</li>
+              <li>6 giorni a settimana</li>
+              <li>9 ore al giorno</li>
+            </ul>
+          </p>
+          <p>
+            L'approccio didattico è squisitamente pratico: ogni giorno ci si confronta con un <em>progetto</em> da portare a termine e che ogni studente può aggiungere nel proprio <em>portfolio</em>.
+          </p>
+          <p>
+            Si lavora in coppia seguendo la tecnica nota come <em>pair programming</em> (le coppie variano ad ogni progetto).
+          </p>
+          <p>
+            A fine corso lo studente avrà accumulato nel portfolio un numero di progetti tale da certificare i progressi e le competenze professionali acqusite.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h3>A chi è rivolta</h3>      
+        <div>
+          <p>
+            La pre-iscrizione all'academy è aperta a tutti, due soli sono i prerequisiti necessari minimi: curiosità e grande motivazione!
+          </p>
+          <p>
+            In particolare risponde alle necessità di: chi vuole diventare Ingegnere Web ma non perdere 5 anni nello studio di materie trasversali che non interessano, ingengeri informatici che vogliano integrare le conoscenze universitarie, imprenditori che vogliano avviare una startup web.
+          </p>
+          <p>
+            Per chi fosse totalmente diguino di know-how relativo allo sviluppo software saranno erogati dei moduli di base prima dell'inizio dei corsi per fare in modo che tutti gli studenti inizino da uno stesso livello base minimo.
+          </p>
+          <p>Ci riserviamo la possibilità di selezionare gli studenti preiscritti.</p>
+        </div>
+      </div>
+    </section>
+    
+    <section>
+      <div class="container">
+        <h3>Quando si parte</h3>
+        <div>
+          <p>
+            Cominciamo con la Spring Edition: partenza in primavera (Marzo) e fine prima dell'estate (Giugno).
+          </p>
+          <p>
+            Sei interessato a partecipare, vuoi conoscere il programma nel dettaglio o conoscere il prezzo? Lascia la tua email, ti contattatiamo immediatamente!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h3>Dove siamo</h3>
+        <p>
+          Codedoc è basato a Roma. Stiamo passando al vaglio diverse possibili location, poichè cerchiamo un luogo accogliente e luminoso nel quale i nostri studenti possano applicarsi …
+        </p>
+        <p>
+          A breve pubblicheremo il risultato della nostra ricerca, organizzando un meetup nella location designata! Non dimenticare di lasciare la tua email per rimanere aggiornato.        
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h3>Perchè diventare un ingegnere Web</h3>
+        <ul>
+          <li>è divertente</li>
+          <li>è la figura più richiesta del mondo (link a qualche sito di recruiting…) stipendi medi neograduati all'estero</li>
+          <li>acquisisci un know-how unico</li>
+          <li>cavalca l'onda: possibilità in italia dovute all'inevitabile necessità di aggiornamento tecnologico</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h3>Founders</h3>
+        <ul>
+          <li><a is="x-link" href="/team#enrico">Enrico Marino</a></li>
+          <li><a is="x-link" href="/team#federico">Federico Spini</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h3>La prima in Italia</h3>
+        <p>
+          <strong>Codedoc Academy</strong> è la prima code academy in Italia. Il modello della code academy, nuovo nel nostro paese, è invece ben noto all'estero dove rappresenta una realtà affermata e di successo. Ad oggi si contano più di 140 code academy, maggiormente concentrate negli USA ma . 
+        <p>
+          In particolare negli USA rappresentano una realtà alternativa al percorso universitario.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h3>Vuoi contribuire al progetto?</h3>
+        <p>Lascia la tua email</p>
+      </div>
+      <div class="container">
+        <h3>Ti piace il progetto?</h3>
+        <p>Lascia la tua email, ti terremo aggiornato sugli sviluppi</p>
+      </div>
+    </section>
+    
     <part-footer></part-footer>
-    <!-- <google-analytics></google-analytics> -->
+    <x-ga></x-ga>
 
   </template>
   <script>
     Polymer('page-home', {
 
+      texts: {},
+
       ready: function () {
-        this.$.header.brand = 'Codedoc Academy';
+        this.$.texts.page = this;
+        this.$.header.brand = {
+          label: 'Codedoc Academy',
+          url: '/'
+        };
       }
 
     });

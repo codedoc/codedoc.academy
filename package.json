@@ -16,5 +16,10 @@
   },
   "optionalDependencies": {
     "loopback-explorer": "^1.1.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.9",
+    "gulp-shell": "^0.2.10",
+    "run-sequence": "^1.0.1"
   }
 }
