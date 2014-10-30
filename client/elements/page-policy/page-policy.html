@@ -1,7 +1,7 @@
-<link rel="import" href="../../components/x-header/x-header.html">
 <link rel="import" href="../../components/x-jumbotron/x-jumbotron.html">
 <link rel="import" href="../../components/x-ga/x-ga.html">
 <link rel="import" href="../part-footer/part-footer.html">
+<link rel="import" href="../part-header/part-header.html">
 <polymer-element name="page-policy">
   <template>
     <style>
@@ -9,7 +9,7 @@
         display: block;
       }
 
-      x-header::shadow #navbar a {
+      part-header::shadow #navbar a {
         color: #333;
       }
 
@@ -30,7 +30,7 @@
       }
     </style>
 
-    <x-header id="header"></x-header>
+    <part-header id="header"></part-header>
     <x-jumbotron>
       <h1>Privacy Policy</h1>
     </x-jumbotron>
@@ -120,13 +120,6 @@
   </template>
   <script>
     Polymer('page-policy', {
-
-      ready: function () {
-        this.$.header.brand = {
-          label: 'Codedoc Academy',
-          url: '/'
-        };
-      }
 
     });
   </script>
