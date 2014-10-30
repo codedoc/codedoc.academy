@@ -1,36 +1,33 @@
 <link rel="import" href="../../components/core-ajax/core-ajax.html">
 <link rel="import" href="../../components/core-input/core-input.html">
 
-<polymer-element name="part-form" attributes="endpoint method type">
+<polymer-element name="x-email" attributes="endpoint method ping-type" extends="core-input">
   <template>
     <style>
+      :host {
+        display: block;
+      }
     </style>
-
-     <div class="container">
-      <div class="col-md-10 col-md-push-1">
-        <core-input id="email" name="email" type="email"></core-input>
-        <core-ajax
-          id="request"
-          method="{{ method || 'POST' }}"
-          url="{{ endpoint }}"
-          handleAs="json"
-          on-core-response="{{handleResponse}}">
-        </core-ajax>
-      </div>
-    </div>
-
-
-
+    <shadow></shadow>
+    <core-ajax
+      id="request"
+      method="{{ method || 'POST' }}"
+      url="{{ endpoint }}"
+      handleAs="json"
+      on-core-response="{{handleResponse}}">
+    </core-ajax>
   </template>
   <script>
     Polymer('part-form', {
+      
+      type: 'email',
 
       send: function () {
-        var email = this.$.email;
+        var email = this;
         var request = this.$.request;
         var data = {
           email: email.value,
-          type: this.type
+          ping_type: email.ping_type
         };
 
         if (email.validity.valid) {
@@ -41,6 +38,7 @@
           console.error('There was an error');
         }
       }
+
     });
   </script>
 </polymer-element>
