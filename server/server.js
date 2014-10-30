@@ -26,10 +26,13 @@ app.use(loopback.static(path.dirname(app.index_file_path)));
 // Requests that get this far won't be handled
 // by any middleware. Convert them into a 404 error
 // that will be handled later down the chain.
-app.use(loopback.urlNotFound());
+// app.use(loopback.urlNotFound());
 
 // The ultimate error handler.
-app.use(loopback.errorHandler());
+// app.use(loopback.errorHandler());
+
+// Catch all for single page application
+app.get('*', function (req, res) { res.sendFile(app.index_file_path); });
 
 app.start = function() {
   // start the web server
