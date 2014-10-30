@@ -9,7 +9,13 @@
     "paper-input": "Polymer/paper-input#~0.4.2",
     "paper-button": "Polymer/paper-button#~0.4.2",
     "core-icon": "Polymer/core-icon#~0.4.2",
-    "core-icons": "Polymer/core-icons#~0.4.2"
+    "core-icons": "Polymer/core-icons#~0.4.2",
+    "x-header": "x-element/x-header#master",
+    "x-jumbotron": "x-element/x-jumbotron#master",
+    "x-link": "x-element/x-link#master",
+    "x-location": "x-element/x-location#master",
+    "x-bootstrap": "x-element/x-bootstrap#master",
+    "x-ga": "x-element/x-ga#master"
   },
   "devDependencies": {}
 }

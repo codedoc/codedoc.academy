@@ -36,25 +36,18 @@
       }
     </style>
 
-     <div class="container">
+    <core-ajax id="request" method="POST" url="/api/pings" handleAs="json" on-core-response="{{ on_response }}"></core-ajax>
+    
+    <div class="container">
       <div class="col-md-10 col-md-push-1">
-        <paper-input id="email" name="email" type="email" loatingLabel label="leave your email address" error="This is not a valid email!" ></paper-input>
+        <paper-input id="email" name="email" type="email" label="indirizzo email" error="Non è un indirizzo email valido!"></paper-input>
         <paper-button class="colored custom hover" on-click="{{ on_click }}">
           <core-icon icon="check"></core-icon>
           ok
-          </paper-button>
+        </paper-button>
         <paper-button class="custom">
-        <core-ajax
-          id="request"
-          method="POST"
-          url="/api/Pings"
-          handleAs="json"
-          on-core-response="{{handleResponse}}">
-        </core-ajax>
       </div>
     </div>
-
-
 
   </template>
   <script>

@@ -11,6 +11,13 @@ var open = function (page_name, details) {
   };
 };
 
+var onchange = function (event) {
+  var url = event.detail;
+  page.show(url);
+};
+
+app.addEventListener('click link', onchange);
+
 var start = function () {
   page('/', open('page-home'));
   page('/policy', open('page-policy'));

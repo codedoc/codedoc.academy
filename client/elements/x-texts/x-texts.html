@@ -1,0 +1,43 @@
+<link rel="import" href="../../components/core-ajax/core-ajax.html">
+<polymer-element name="x-texts" attributes="url language">
+  <template>  
+    <style>
+      :host {
+        display: none;
+      }
+    </style>
+
+    <core-ajax id="ajax" url="{{ url }}/{{ language }}.json" handleAs="json" on-core-response="{{ on_response }}"></core-ajax>
+
+  </template>
+  <script>
+    Polymer('x-texts', {
+
+      urlChanged: function () {
+        this.go();
+      },
+      languageChanged: function () {
+        console.log('lang',this.language);
+        this.go();
+      },
+      pageChanged: function () {
+        this.go();
+      },
+
+      go: function () {
+        if (this.url && this.language) {
+          this.$.ajax.go();
+        }
+      },
+
+      on_response: function (event) {
+        var response = event.detail.response;
+        if (this.page) {
+          this.page.texts = response;
+        }
+        this.fire('load texts', response);
+      }
+
+    });
+  </script>
+</polymer-element>
