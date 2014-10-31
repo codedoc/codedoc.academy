@@ -1,3 +1,5 @@
+window.logFlags = window.logFlags || {};
+
 var app = document.getElementById('app');
 
 var open = function (page_name, details) {
@@ -20,6 +22,9 @@ app.addEventListener('click link', onchange);
 
 var start = function () {
   page('/', open('page-home'));
+  page('/team', open('page-team'));
+  page('/contact', open('page-contact'));
+  page('/glossary', open('page-glossary'));
   page('/policy', open('page-policy'));
   page('*', open('page-home'));
   page();
