@@ -1,10 +1,26 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
 
+/**
+  Colori palette siggerita da Ema
+  A #101017 - nero (testi)
+  B #CEE379 - giallo
+  C #3E8AA8 - azzurro
+  D #EdEFF4 - grigio chiaro
+  E #FFFFF  - bianco
+
+  variante
+
+  B #403F46 - grigio scuro
+  C #3E7DCC - azzurro più chiaro
+
+ **/
+
 html, 
 body {
   margin: 0;
   padding: 0;
   transition: none;
+  overflow-x: hidden;
 }
 
 html {
@@ -13,9 +29,18 @@ html {
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
   margin-bottom: 80px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  color: #101017;
 }
+
+/** in chrome non sovrascrive la regole deifnite in 898 e 899 di x-bootstrap-deep.css che devono essere quindi commentate **/
+html /deep/ body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+}
+
 
 html /deep/ part-jumbotron h1,
 html /deep/ part-jumbotron h2 {

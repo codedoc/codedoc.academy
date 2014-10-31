@@ -1,0 +1,81 @@
+<link rel="import" href="../x-email/x-email.html">
+<polymer-element name="part-email">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+      x-email {
+        display: inline;
+        font-size: 50px;
+        font-weight: 300;
+        /*width: 100%;*/
+        color: #FFFFFF;
+        padding: 5px;
+        background-color: #3E7DCC;
+
+        float: left;
+        width: 100%;
+        margin-left: -108px;
+        padding-left: 132px;
+        padding-top: 19px;
+        padding-bottom: 10px;
+        padding-right: 25px;
+      }
+
+      #send {
+        background-color: #3E7DCC;
+        float: right;
+        position: relative;
+        height: 100px;
+        width: 100px;
+        color: #FFFFFF;
+        font-size: 88px;
+        text-align: center;
+        font-weight: 300;
+        margin-right: 4px;
+      }
+
+      #send:hover {
+        cursor: pointer;
+      }
+
+      #icon {
+        top: -12px;
+        left: 6px;
+        position: absolute;
+      }
+      
+      /*svg {
+        fill: #FFFFFF;
+      }*/
+    </style>
+    <x-email
+      id="email"
+      endpoint="/api/Pings"
+      ping-type="interested"
+      placeholder="lascia la tua email"
+      on-keypress="{{ on_keypress }}">
+    </x-email>
+    <div id="send" on-click="{{ on_click }}">
+      <span id="icon">&rarr;</span>
+    </div>
+  </template>
+  <script>
+    Polymer('part-email', {
+
+      on_keypress: function (event) {
+        var email = this.$.email;
+        if (event.keyCode === 13) {
+          email.$.input.blur();
+          email.send();
+        }
+      },
+
+      on_click: function (event) {
+        this.$.email.send();
+      }
+
+    });
+  </script>
+</polymer-element>

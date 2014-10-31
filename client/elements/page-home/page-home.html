@@ -3,7 +3,7 @@
 <link rel="import" href="../../components/x-link/x-link.html">
 <link rel="import" href="../part-header/part-header.html">
 <link rel="import" href="../part-footer/part-footer.html">
-<link rel="import" href="../x-email/x-email.html">
+<link rel="import" href="../part-email/part-email.html">
 <polymer-element name="page-home">
   <template>
     <style>
@@ -25,21 +25,49 @@
       x-jumbotron::shadow #jumbotron {
         background-image: url('../../images/env.jpg');
         height: 400px;
+        text-shadow: 1px 1px 4px #101017;
       }
       x-jumbotron::shadow #container {
         padding-top: 150px;
         text-align: center;
       }
+      part-header::shadow a {
+        text-shadow: 1px 1px 4px #101017;
+      }
 
       section {
-        padding-top: 20px;
+        padding-top: 40px;
         padding-bottom: 40px;
-        border-bottom: 5px solid #efefef;
+        border-bottom: 2px solid #EDEFF4;
+      }
+
+      section.sidepicture {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        border-bottom: none;
+      }
+
+      section.sidepicture .text{
+        background-color: #EDEFF4;
+        height: 100%;
       }
 
       #flag {
         text-align: center;
       }
+
+      #location .row {
+        height: 460px;
+      }
+
+      #location .picture {
+        height: 100%;
+        background-image: url('../../images/location.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-position-x: -258px;
+      }
+
       #flag #ita {
         display: inline-block;
         width: 60px;
@@ -51,7 +79,7 @@
         background-position: center;
       }
 
-      #picture {
+      #founders .picture {
         height: 400px;
         margin-bottom: -150px;
         background-image: url('../../images/founders.png');
@@ -77,7 +105,25 @@
         <a is="x-link" href="/program">Scopri in maggior dettaglio il programma e il metodo didattico</a>
       </div>
     </section>
-    
+
+    <section id="location" class="sidepicture">
+      <div class="row">
+        <div class="col-sm-3 picture">
+        </div>
+        <div class="col-sm-9 text">
+          <div class="">
+            <h3>Location</h3>
+            <p>
+              Codedoc è basato a Roma. Stiamo passando al vaglio diverse possibili location, poichè cerchiamo un luogo accogliente e luminoso nel quale i nostri studenti possano applicarsi …
+            </p>
+            <p>
+              A breve pubblicheremo il risultato della nostra ricerca, organizzando un meetup nella location designata! Non dimenticare di lasciare la tua email per rimanere aggiornato.        
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section>
       <div class="container">
         <h3>Prima Edizione</h3>
@@ -89,26 +135,8 @@
             Sei interessato a partecipare, vuoi conoscere il programma nel dettaglio o conoscere il prezzo? Lascia la tua email, ti contattatiamo immediatamente!
           </p>
         </div>
-        <x-email endpoint="/api/Pings" ping-type="interested"></x-email>
       </div>
-    </section>
-
-    <section>
-      <div class="row">
-        <div class="col-sm-3">
-          picture
-        </div>
-        <div class="col-sm-9">
-          <div class="">
-            <h3>Location</h3>
-            <p>
-              Codedoc è basato a Roma. Stiamo passando al vaglio diverse possibili location, poichè cerchiamo un luogo accogliente e luminoso nel quale i nostri studenti possano applicarsi …
-            </p>
-            <p>
-              A breve pubblicheremo il risultato della nostra ricerca, organizzando un meetup nella location designata! Non dimenticare di lasciare la tua email per rimanere aggiornato.        
-            </p>
-          </div>
-        </div>
+      <part-email></part-email>
       </div>
     </section>
 
@@ -126,14 +154,14 @@
       </div>
     </section>
 
-    <section>
+    <section id="founders">
       <div class="container">
         <h3>Founders</h3>
         <ul class="list-unstyled list-inline">
           <li><a is="x-link" href="/team#enrico">Enrico <!-- Marino --></a></li>
           <li><a is="x-link" href="/team#federico">Federico <!-- Spini --></a></li>
         </ul>
-        <div id="picture"></div>
+        <div class="picture"></div>
       </div>
     </section>
     

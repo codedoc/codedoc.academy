@@ -14,7 +14,8 @@
       method="{{ method || 'POST' }}"
       url="{{ endpoint }}"
       handleAs="json"
-      on-core-response="{{handleResponse}}">
+      on-core-response="{{ on_response }}"
+      on-core-error="{{ on_error }}">
     </core-ajax>
   </template>
   <script>
@@ -22,24 +23,44 @@
       
       type: 'email',
 
+      dirty: false,
+
       send: function () {
-        var email = this;
         var request = this.$.request;
         var data = {
-          email: email.value,
-          type: email['ping-type']
+          email: this.value,
+          type: this['ping-type']
         };
 
-        if (email.validity.valid) {
-          console.log(data);
-          console.log(this.endpoint);
-
+        if (this.validity.valid) {
           request.params = JSON.stringify(data);
           request.go();
-          console.log('done!');
         } else {
-          console.error('There was an error');
+          this.dirty = true;
+          this.style.color = 'coral';
+          this.value = "Inserisci una email valida!"
         }
+      },
+
+      inputFocusAction: function (event) {
+        this.super();
+        if (!this.dirty) { return; }
+
+        this.value = '';
+        this.style.color = 'white';
+        this.dirty = false;
+      },
+
+      on_response: function (event) {
+        this.style.color = '#2ecc71';
+        this.value = "Abbiamo registrato la tua email, grazie!"
+        this.disabled = true;
+      },
+
+      on_error: function () {
+        this.dirty = true;
+        this.style.color = 'coral';
+        this.value = "Qualcosa è andato storto, prova di nuovo"
       }
 
     });
