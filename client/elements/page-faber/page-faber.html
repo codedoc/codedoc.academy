@@ -1,17 +1,14 @@
 <link rel="import" href="../../components/x-jumbotron/x-jumbotron.html">
 <link rel="import" href="../../components/x-ga/x-ga.html">
-<link rel="import" href="../../components/x-link/x-link.html">
-<link rel="import" href="../part-header/part-header.html">
 <link rel="import" href="../part-footer/part-footer.html">
-<link rel="import" href="../x-texts/x-texts.html">
-<link rel="import" href="../x-parallax/x-parallax.html">
-<polymer-element name="page-glossary">
+<link rel="import" href="../part-header/part-header.html">
+<polymer-element name="page-faber">
   <template>
     <style>
       :host {
         display: block;
       }
-      
+
       part-header::shadow #navbar {
         position: relative;
         margin-bottom: -80px;
@@ -33,35 +30,16 @@
       }
     </style>
 
-    <part-header></part-header>
+    <part-header id="faber"></part-header>
     <x-jumbotron>
-      <h1>Glossario</h1>
+      <h1>Perchè HackFaber</h1>
     </x-jumbotron>
 
-    <section>
-      <div class="container">
-        <template repeat="item in list">
-          <div class="item">
-            <label>{{ item.name }}</label>
-            <p>{{ item.description }}</p>
-          </div>
-        </template>  
-      </div>
-    </section>
-    
-    <part-footer></part-footer>
-    <x-ga></x-ga>
 
+    <part-footer></part-footer>
   </template>
   <script>
-    Polymer('page-glossary', {
-
-      list: [
-        {
-          name: 'JavaScript',
-          description: 'JavaScript is the language of the web.'
-        }
-      ]
+    Polymer('page-faber', {
 
     });
   </script>
