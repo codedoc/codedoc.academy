@@ -36,11 +36,31 @@
       <h2>Siamo lieti di risponderti</h2>
     </x-jumbotron>
 
-    <div id="contacts"></div>
-    
-    <div id="social"></div>
+    <section>
+      <div id="contacts" class="container">
+        <a href="mailto:hello@hackfaber.com">hello@hackfaber.com</a>
+      </div>
+    </section>
 
-    <div id="ping"></div>
+    <section>
+      <div id="social" class="container">
+        <ul class="list-inline list-unstyled">
+          <li>Facebook</li>
+          <li>Google+</li>
+          <li>Twitter</li>
+          <li>GitHub</li>
+          <li>Pinterest</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h3>Ti interessa il progetto?</h3>
+        <p>Lascia la tua email</p>
+        <x-email endpoint="/api/Pings" ping-type="listener"></x-email>
+      </div>
+    </section>
 
     <part-footer></part-footer>
   </template>

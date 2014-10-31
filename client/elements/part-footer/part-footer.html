@@ -16,10 +16,13 @@
         letter-spacing: 1px;
         color: #555;
       }
-      .copyright {
+      #links {
         float: left;
       }
-      .madein {
+      #links .list-inline {
+        display: inline;
+      }
+      #madein {
         float: right;
       }
       .love {
@@ -29,15 +32,15 @@
 
     <div class="footer">
       <div class="container">
-        <div class="pull-left">
-          <span>Codedoc Academy © 2014</span>
+        <div id="links">
+          <span id="copyright">HackFaber © 2014</span>
           <ul class="list-inline list-unstyled">
             <li><a is="x-link" href="/policy">privacy policy</a></li>
             <li><a is="x-link" href="/team">team</a></li>
             <li><a is="x-link" href="/glossary">glossary</a></li>
           </ul>
-        </span>
-        <div class="pull-right">
+        </div>
+        <div id="madein">
           Made with <span class="love">♥</span> in Rome, Italy
         </div>
       </div>

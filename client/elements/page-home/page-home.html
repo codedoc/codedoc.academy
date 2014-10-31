@@ -18,6 +18,10 @@
         color: white;
       }
 
+      #jumbotron h1 {
+        font-size: 60px;
+      }
+
       x-jumbotron::shadow #jumbotron {
         background-image: url('../../images/env.jpg');
         height: 400px;
@@ -32,111 +36,51 @@
         padding-bottom: 40px;
         border-bottom: 5px solid #efefef;
       }
+
+      #flag {
+        text-align: center;
+      }
+      #flag #ita {
+        display: inline-block;
+        width: 60px;
+        height: 60px;
+        border-radius: 60px;
+        background-image: url('../../images/ita.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      #picture {
+        height: 400px;
+        margin-bottom: -150px;
+        background-image: url('../../images/founders.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
     </style>
 
     <part-header></part-header>
-    <x-jumbotron>
+    <x-jumbotron id="jumbotron">
       <h1>HackFaber</h1>
       <h2>Diventa un Ingegnere Web in 12 settimane</h2>
     </x-jumbotron>
 
     <section>
-      <div class="container">
-        <h3>Quali sfide affronterai</h3>
-        <div>
-          <p>Lo sviluppo Web in un ecosistema JavaScript composto dalle più recenti tecnologie:</p>
-          <ul class="list-inline list-unstyled">
-            <li><a is="x-link" href="/glossary#javascript">JavaScript</a></li>
-            <li><a is="x-link" href="/glossary#html5">HTML5</a></li>
-            <li><a is="x-link" href="/glossary#css3">CSS3</a></li>
-          </ul>
-        </div>
-        <div>
-          <p>I più moderni e diffusi strumenti di <em>code revision</em>, piattaforme Web di <em>social coding</em>, e metodi di <em>sviluppo collaborativo</em>:</p>
-          <ul class="list-inline list-unstyled">
-            <li><a is="x-link" href="/glossary#git">git</a></li>
-            <li><a is="x-link" href="/glossary#github">GitHub</a></li>
-            <li><a is="x-link" href="/glossary#npm">npm</a></li>
-            <li><a is="x-link" href="/glossary#bower">Bower</a></li>
-            <li><a is="x-link" href="/glossary#gulp">Gulp</a></li>
-            <li><a is="x-link" href="/glossary#yeoman">Yeoman</a></li>
-            <li><a is="x-link" href="/glossary#duo">DUO</a></li>
-            <li><a is="x-link" href="/glossary#grunt">Grunt</a></li>
-          </ul>
-        </div>
-        <div>
-          <p>I <em>framework frontend</em> e le librerie JavaScript per una <em>user interface</em> e <em>user experience</em> avanzata:</p>
-          <ul class="list-inline list-unstyled">
-            <li><a is="x-link" href="/glossary#jquery">jQuery</a></li>
-            <li><a is="x-link" href="/glossary#bootstrap">Bootstrap</a></li>
-            <li><a is="x-link" href="/glossary#three">Three.js</a></li>
-            <li><a is="x-link" href="/glossary#raphael">Raphael.js</a></li>
-            <li><a is="x-link" href="/glossary#d3">D3.js</a></li>
-            <li><a is="x-link" href="/glossary#angular">Angular.js</a></li>        
-            <li><a is="x-link" href="/glossary#polymer">Polymer.js</a></li>
-          </ul>
-        </div>
-        <div>
-          <p>I <em>framework backend</em> più diffusi e più potenti, <em>database noSQL</em> leader di mercato, librerie JavaScript per la comunicazione realtime:</p>
-          <ul class="list-inline list-unstyled">
-            <li><a is="x-link" href="/glossary#node">Node.js</a></li>
-            <li><a is="x-link" href="/glossary#">Express.js</a></li>
-            <li><a is="x-link" href="/glossary#mongodb">MongoDB</a></li>
-            <li><a is="x-link" href="/glossary#loopback">LoopBack</a></li>
-            <li><a is="x-link" href="/glossary#">MongoDB</a></li>
-            <li><a is="x-link" href="/glossary#">Redis</a></li>
-            <li><a is="x-link" href="/glossary#">Socket.io</a></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <h3>Com'è organizzato il corso</h3>
-        <div>
-          <p>
-            Il corso è intensivo: 
-            <ul class="list-inline list-unstyled">
-              <li>12 settimane</li>
-              <li>6 giorni a settimana</li>
-              <li>9 ore al giorno</li>
-            </ul>
-          </p>
-          <p>
-            L'approccio didattico è squisitamente pratico: ogni giorno ci si confronta con un <em>progetto</em> da portare a termine e che ogni studente può aggiungere nel proprio <em>portfolio</em>.
-          </p>
-          <p>
-            Si lavora in coppia seguendo la tecnica nota come <em>pair programming</em> (le coppie variano ad ogni progetto).
-          </p>
-          <p>
-            A fine corso lo studente avrà accumulato nel portfolio un numero di progetti tale da certificare i progressi e le competenze professionali acqusite.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <h3>A chi è rivolta</h3>      
-        <div>
-          <p>
-            La pre-iscrizione all'academy è aperta a tutti, due soli sono i prerequisiti necessari minimi: curiosità e grande motivazione!
-          </p>
-          <p>
-            In particolare risponde alle necessità di: chi vuole diventare Ingegnere Web ma non perdere 5 anni nello studio di materie trasversali che non interessano, ingengeri informatici che vogliano integrare le conoscenze universitarie, imprenditori che vogliano avviare una startup web.
-          </p>
-          <p>
-            Per chi fosse totalmente diguino di know-how relativo allo sviluppo software saranno erogati dei moduli di base prima dell'inizio dei corsi per fare in modo che tutti gli studenti inizino da uno stesso livello base minimo.
-          </p>
-          <p>Ci riserviamo la possibilità di selezionare gli studenti preiscritti.</p>
-        </div>
+      <div class="container">      
+        <h3>Partecipa alla prima code academy in Italia</h3>
+        <p>
+          Diventa un esperto professionista del Web in 12 settimane, 
+          padroneggia le più recenti, popolari, diffuse tecnologie per lo sviluppo Web.
+        </p>
+        <a is="x-link" href="/program">Scopri in maggior dettaglio il programma e il metodo didattico</a>
       </div>
     </section>
     
     <section>
       <div class="container">
-        <h3>Quando si parte</h3>
+        <h3>Prima Edizione</h3>
         <div>
           <p>
             Cominciamo con la Spring Edition: partenza in primavera (Marzo) e fine prima dell'estate (Giugno).
@@ -145,45 +89,34 @@
             Sei interessato a partecipare, vuoi conoscere il programma nel dettaglio o conoscere il prezzo? Lascia la tua email, ti contattatiamo immediatamente!
           </p>
         </div>
+        <x-email endpoint="/api/Pings" ping-type="interested"></x-email>
+      </div>
+    </section>
+
+    <section>
+      <div class="row">
+        <div class="col-sm-3">
+          picture
+        </div>
+        <div class="col-sm-9">
+          <div class="">
+            <h3>Location</h3>
+            <p>
+              Codedoc è basato a Roma. Stiamo passando al vaglio diverse possibili location, poichè cerchiamo un luogo accogliente e luminoso nel quale i nostri studenti possano applicarsi …
+            </p>
+            <p>
+              A breve pubblicheremo il risultato della nostra ricerca, organizzando un meetup nella location designata! Non dimenticare di lasciare la tua email per rimanere aggiornato.        
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
     <section>
       <div class="container">
-        <h3>Dove siamo</h3>
-        <p>
-          Codedoc è basato a Roma. Stiamo passando al vaglio diverse possibili location, poichè cerchiamo un luogo accogliente e luminoso nel quale i nostri studenti possano applicarsi …
-        </p>
-        <p>
-          A breve pubblicheremo il risultato della nostra ricerca, organizzando un meetup nella location designata! Non dimenticare di lasciare la tua email per rimanere aggiornato.        
-        </p>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <h3>Perchè diventare un ingegnere Web</h3>
-        <ul>
-          <li>è divertente</li>
-          <li>è la figura più richiesta del mondo (link a qualche sito di recruiting…) stipendi medi neograduati all'estero</li>
-          <li>acquisisci un know-how unico</li>
-          <li>cavalca l'onda: possibilità in italia dovute all'inevitabile necessità di aggiornamento tecnologico</li>
-        </ul>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <h3>Founders</h3>
-        <ul>
-          <li><a is="x-link" href="/team#enrico">Enrico Marino</a></li>
-          <li><a is="x-link" href="/team#federico">Federico Spini</a></li>
-        </ul>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
+        <div id="flag">
+          <span id="ita"></span>
+        </div>
         <h3>La prima in Italia</h3>
         <p>
           <strong>Codedoc Academy</strong> è la prima code academy in Italia. Il modello della code academy, nuovo nel nostro paese, è invece ben noto all'estero dove rappresenta una realtà affermata e di successo. Ad oggi si contano più di 140 code academy, maggiormente concentrate negli USA ma . 
@@ -195,14 +128,12 @@
 
     <section>
       <div class="container">
-        <h3>Vuoi contribuire al progetto?</h3>
-        <p>Lascia la tua email</p>
-        <x-email endpoint="/api/Pings" ping-type="collaborator"></x-email>
-      </div>
-
-      <div class="container">
-        <h3>Ti piace il progetto?</h3>
-        <p>Lascia la tua email, ti terremo aggiornato sugli sviluppi</p>
+        <h3>Founders</h3>
+        <ul class="list-unstyled list-inline">
+          <li><a is="x-link" href="/team#enrico">Enrico <!-- Marino --></a></li>
+          <li><a is="x-link" href="/team#federico">Federico <!-- Spini --></a></li>
+        </ul>
+        <div id="picture"></div>
       </div>
     </section>
     
