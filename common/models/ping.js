@@ -22,7 +22,7 @@ module.exports = function (Ping) {
     // send an email
     Gmail.send({
       to: this.email,
-      from: 'info@codedoc.academy',
+      from: 'info@hackfaber.com',
       subject: 'this is a test',
       html: emails[this.type],
     }, function(err, mail) {

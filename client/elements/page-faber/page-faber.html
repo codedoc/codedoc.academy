@@ -1,0 +1,46 @@
+<link rel="import" href="../../components/x-jumbotron/x-jumbotron.html">
+<link rel="import" href="../../components/x-ga/x-ga.html">
+<link rel="import" href="../part-footer/part-footer.html">
+<link rel="import" href="../part-header/part-header.html">
+<polymer-element name="page-faber">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      part-header::shadow #navbar {
+        position: relative;
+        margin-bottom: -80px;
+      }
+      part-header::shadow #navbar a {
+        color: #333;
+      }
+
+      x-jumbotron::shadow #jumbotron {
+        height: auto;
+      }
+      x-jumbotron::shadow #overlay {
+        background-color: #efefef;
+      }
+      x-jumbotron::shadow #container {
+        padding-top: 150px;
+        padding-bottom: 10px;
+        color: #333;
+      }
+    </style>
+
+    <part-header id="faber"></part-header>
+    <x-jumbotron>
+      <h1>Perchè HackFaber</h1>
+    </x-jumbotron>
+
+
+    <part-footer></part-footer>
+  </template>
+  <script>
+    Polymer('page-faber', {
+
+    });
+  </script>
+</polymer-element>

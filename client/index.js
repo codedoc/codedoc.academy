@@ -1,3 +1,5 @@
+window.logFlags = window.logFlags || {};
+
 var app = document.getElementById('app');
 
 var open = function (page_name, details) {
@@ -20,13 +22,19 @@ app.addEventListener('click link', onchange);
 
 var start = function () {
   page('/', open('page-home'));
+  page('/contact', open('page-contact'));
+  page('/faber', open('page-faber'));
+  page('/glossary', open('page-glossary'));
+  page('/home', open('page-home'));
+  page('/program', open('page-program'));
   page('/policy', open('page-policy'));
+  page('/team', open('page-team'));
   page('*', open('page-home'));
   page();
 
   page.show(location.pathname);
 
-  console.log('Welcome to Codedoc Academy!');
+  console.log('Welcome to HackFaber!');
 };
 
 start();
