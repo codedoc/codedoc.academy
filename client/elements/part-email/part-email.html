@@ -1,18 +1,22 @@
 <link rel="import" href="../x-email/x-email.html">
-<polymer-element name="part-email">
+<polymer-element name="part-email" attributes="sender">
   <template>
     <style>
       :host {
         display: block;
       }
+
+      .colors {
+        color: #FFFFFF;
+        background-color: #3E7DCC;
+      }
+
       x-email {
         display: inline;
         font-size: 50px;
         font-weight: 300;
         /*width: 100%;*/
-        color: #FFFFFF;
         padding: 5px;
-        background-color: #3E7DCC;
 
         float: left;
         width: 100%;
@@ -24,12 +28,10 @@
       }
 
       #send {
-        background-color: #3E7DCC;
         float: right;
         position: relative;
         height: 100px;
         width: 100px;
-        color: #FFFFFF;
         font-size: 88px;
         text-align: center;
         font-weight: 300;
@@ -38,6 +40,8 @@
 
       #send:hover {
         cursor: pointer;
+       -webkit-filter: brightness(1.1);
+        filter: brightness(1.1);
       }
 
       #icon {
@@ -51,14 +55,15 @@
       }*/
     </style>
     <x-email
+      class="colors"
       id="email"
       endpoint="/api/Pings"
-      ping-type="interested"
+      sender="{{ sender }}"
       placeholder="lascia la tua email"
       on-keypress="{{ on_keypress }}">
     </x-email>
-    <div id="send" on-click="{{ on_click }}">
-      <span id="icon">&rarr;</span>
+    <div class="colors" id="send" on-click="{{ on_click }}">
+      <span id="icon">➝</span>
     </div>
   </template>
   <script>

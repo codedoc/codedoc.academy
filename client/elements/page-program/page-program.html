@@ -1,6 +1,6 @@
 <link rel="import" href="../../components/x-jumbotron/x-jumbotron.html">
 <link rel="import" href="../../components/x-ga/x-ga.html">
-<link rel="import" href="../x-email/x-email.html">
+<link rel="import" href="../part-email/part-email.html">
 <link rel="import" href="../part-footer/part-footer.html">
 <link rel="import" href="../part-header/part-header.html">
 <polymer-element name="page-program">
@@ -29,6 +29,11 @@
         padding-bottom: 10px;
         color: #333;
       }
+
+      /*part-email /deep/ .colors {
+        color: #101017;
+        background-color: #CEE379;
+      }*/
     </style>
 
     <part-header id="header"></part-header>
@@ -165,8 +170,8 @@
       <div class="container">
         <h3>Vuoi contribuire al progetto?</h3>
         <p>Lascia la tua email</p>
-        <x-email endpoint="/api/Pings" ping-type="collaborator"></x-email>
       </div>
+      <part-email sender="collaborator"></part-email>
     </section>
 
     <section>

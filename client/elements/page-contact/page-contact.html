@@ -2,6 +2,7 @@
 <link rel="import" href="../../components/x-ga/x-ga.html">
 <link rel="import" href="../part-footer/part-footer.html">
 <link rel="import" href="../part-header/part-header.html">
+<link rel="import" href="../part-email/part-email.html">
 <polymer-element name="page-contact">
   <template>
     <style>
@@ -28,6 +29,11 @@
         padding-bottom: 10px;
         color: #333;
       }
+
+      /*part-email /deep/ .colors {
+        color: #101017;
+        background-color: #CEE379;
+      }*/
     </style>
 
     <part-header id="header"></part-header>
@@ -58,8 +64,8 @@
       <div class="container">
         <h3>Ti interessa il progetto?</h3>
         <p>Lascia la tua email</p>
-        <x-email endpoint="/api/Pings" ping-type="listener"></x-email>
       </div>
+       <part-email sender="listener"></part-email>
     </section>
 
     <part-footer></part-footer>

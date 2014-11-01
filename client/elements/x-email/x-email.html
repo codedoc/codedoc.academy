@@ -1,7 +1,7 @@
 <link rel="import" href="../../components/core-ajax/core-ajax.html">
 <link rel="import" href="../../components/core-input/core-input.html">
 
-<polymer-element name="x-email" attributes="endpoint method ping-type" extends="core-input">
+<polymer-element name="x-email" attributes="endpoint method sender" extends="core-input">
   <template>
     <style>
       :host {
@@ -26,13 +26,15 @@
       dirty: false,
 
       send: function () {
+        if (this.dirty) { return; }
+
         var request = this.$.request;
         var data = {
           email: this.value,
-          type: this['ping-type']
+          sender: this.sender
         };
 
-        if (this.validity.valid) {
+        if (this.validity.valid && this.value !== '') {
           request.params = JSON.stringify(data);
           request.go();
         } else {

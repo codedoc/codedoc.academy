@@ -10,7 +10,7 @@
     "created": {
       "type": "date"
     },
-    "type": {
+    "sender": {
       "type": "string",
       "required": true
     }
