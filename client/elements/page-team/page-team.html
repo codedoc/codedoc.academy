@@ -19,7 +19,7 @@
       }
 
       x-jumbotron::shadow #jumbotron {
-        height: auto;
+        height: 300px;
       }
       x-jumbotron::shadow #overlay {
         background-color: #efefef;
@@ -29,41 +29,29 @@
         padding-bottom: 10px;
         color: #333;
       }
-      /*part-email /deep/ .colors {
-        color: #101017;
-        background-color: #CEE379;
-      }*/
     </style>
 
     <part-header id="header"></part-header>
+
     <x-jumbotron>
       <h1>Team</h1>
     </x-jumbotron>
 
     <section>    
       <div id="founders" class="container">
-        Enrico Marino Federico Spini
+        <ul class="list-unstyled list-inline">
+          <li>Enrico Marino</li>
+          <li>Federico Spini</li>
+        </ul>
       </div>
     </section>
 
     <section>
-      <div id="about" class="container">
-        <h3></h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-      </div>
-    </section>    
-
-    <section>
       <div class="container">
         <h3>Vuoi contribuire al progetto?</h3>
-        <p>Lascia la tua email</p>
+        <p>
+          Scrivi a <a href="mailto:hello@hackfaber.com">hello@hackfaber.com</a> oppure lascia la tua email.
+        </p>
       </div>
       <part-email sender="collaborator"></part-email>
     </section>

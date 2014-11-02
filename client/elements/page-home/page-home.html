@@ -23,22 +23,15 @@
       }
 
       x-jumbotron::shadow #jumbotron {
-        background-image: url('../../images/env.jpg');
-        height: 400px;
-        text-shadow: 1px 1px 4px #101017;
+        height: 600px;
+        text-shadow: 0px 0px 4px #555;
       }
       x-jumbotron::shadow #container {
-        padding-top: 150px;
+        padding-top: 200px;
         text-align: center;
       }
       part-header::shadow a {
-        text-shadow: 1px 1px 4px #101017;
-      }
-
-      section {
-        padding-top: 40px;
-        padding-bottom: 40px;
-        border-bottom: 2px solid #EDEFF4;
+        text-shadow: 0px 0px 4px #555;
       }
 
       section.sidepicture {
@@ -51,11 +44,6 @@
         background-color: #EDEFF4;
         height: 100%;
       }
-
-      /*part-email /deep/ .colors {
-        color: #101017;
-        background-color: #CEE379;
-      }*/
 
       #flag {
         text-align: center;
@@ -92,6 +80,10 @@
         background-repeat: no-repeat;
         background-position: center;
       }
+
+      #founders h3 a {
+        font-size: 24px;
+      }
     </style>
 
     <part-header></part-header>
@@ -102,70 +94,77 @@
 
     <section>
       <div class="container">      
-        <h3>Partecipa alla prima code academy in Italia</h3>
-        <p>
-          Diventa un esperto professionista del Web in 12 settimane, 
-          padroneggia le più recenti, popolari, diffuse tecnologie per lo sviluppo Web.
-        </p>
-        <a is="x-link" href="/program">Scopri in maggior dettaglio il programma e il metodo didattico</a>
-      </div>
-    </section>
-
-    <section id="location" class="sidepicture">
-      <div class="row">
-        <div class="col-sm-3 picture">
-        </div>
-        <div class="col-sm-9 text">
-          <div class="">
-            <h3>Location</h3>
-            <p>
-              Codedoc è basato a Roma. Stiamo passando al vaglio diverse possibili location, poichè cerchiamo un luogo accogliente e luminoso nel quale i nostri studenti possano applicarsi …
-            </p>
-            <p>
-              A breve pubblicheremo il risultato della nostra ricerca, organizzando un meetup nella location designata! Non dimenticare di lasciare la tua email per rimanere aggiornato.        
-            </p>
-          </div>
+        <div class="col-sm-8 col-sm-push-2">
+          <h3>Partecipa alla prima code academy in Italia</h3>
+          <p>
+            Diventa un esperto professionista del Web in 12 settimane, 
+            padroneggia le più recenti, popolari, diffuse tecnologie per lo sviluppo Web.
+          </p>
+          <a is="x-link" href="/program">Scopri in maggior dettaglio il programma e il metodo didattico</a>          
         </div>
       </div>
     </section>
 
     <section>
       <div class="container">
-        <h3>Prima Edizione</h3>
-        <div>
-          <p>
-            Cominciamo con la Spring Edition: partenza in primavera (Marzo) e fine prima dell'estate (Giugno).
-          </p>
-          <p>
-            Sei interessato a partecipare, vuoi conoscere il programma nel dettaglio o conoscere il prezzo? Lascia la tua email, ti contattatiamo immediatamente!
-          </p>
-        </div>
-      </div>
-      <part-email sender="interested"></part-email>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
+<!--         
         <div id="flag">
           <span id="ita"></span>
         </div>
-        <h3>La prima in Italia</h3>
-        <p>
-          <strong>Codedoc Academy</strong> è la prima code academy in Italia. Il modello della code academy, nuovo nel nostro paese, è invece ben noto all'estero dove rappresenta una realtà affermata e di successo. Ad oggi si contano più di 140 code academy, maggiormente concentrate negli USA ma . 
-        <p>
-          In particolare negli USA rappresentano una realtà alternativa al percorso universitario.
-        </p>
+ -->
+        <div class="col-sm-8 col-sm-push-2">
+          <h3>La prima in Italia</h3>
+          <p>
+            <strong>HackFaber</strong> è la prima code academy in Italia. 
+            <br/>
+            Il modello della code academy, nuovo nel nostro paese, è invece ben noto all'estero dove rappresenta una realtà affermata e di successo. 
+            <br/>
+            Ad oggi si contano più di 130 code academy, maggiormente concentrate negli USA. 
+            <br/>
+            In particolare negli USA rappresentano una realtà alternativa al percorso universitario.
+          </p>
+          <a is="x-link" href="/faber">Scopri in maggior dettaglio perchè una academy del codice ora, perchè in Italia</a>        
+        </div>
       </div>
+    </section>
+
+    <section class="parallax"></section>
+
+    <section>
+      <div class="container">
+        <div class="col-sm-8 col-sm-push-2">
+          <h3>Location</h3>
+          <p>
+            <strong>HackFaber</strong> è basato a Roma. Stiamo passando al vaglio diverse possibili location, poichè cerchiamo un luogo accogliente e luminoso nel quale i nostri studenti possano applicarsi …
+          </p>
+          <p>
+            A breve pubblicheremo il risultato della nostra ricerca, organizzando un meetup nella location designata! Non dimenticare di lasciare la tua email per rimanere aggiornato.        
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="col-sm-8 col-sm-push-2">
+          <h3>Prima Edizione</h3>
+          <div>
+            <p>
+              Stiamo lavorando duramente per avviare la prima edizione ad inizio febbraio 2015.
+            </p>
+            <p>
+              Sei interessato a partecipare, vuoi conoscere il programma nel dettaglio o conoscere il prezzo?
+            </p>
+            <p>Scrivi a <a href="mailto:hello@hackfaber.com">hello@hackfaber.com</a>, oppure lascia la tua email.</p>
+          </div>          
+        </div>
+      </div>
+      <part-email sender="interested"></part-email>    
     </section>
 
     <section id="founders">
       <div class="container">
-        <h3>Founders</h3>
-        <ul class="list-unstyled list-inline">
-          <li><a is="x-link" href="/team#enrico">Enrico <!-- Marino --></a></li>
-          <li><a is="x-link" href="/team#federico">Federico <!-- Spini --></a></li>
-        </ul>
+        <h3><a is="x-link" href="/team">incontra i fondatori</a></h3>
         <div class="picture"></div>
       </div>
     </section>

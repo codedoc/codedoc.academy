@@ -41,6 +41,15 @@ html /deep/ body {
   font-size: 16px;
 }
 
+a:hover,
+html /deep/ a:hover,
+html /deep/ a:focus {
+  text-decoration: none;
+}
+
+html /deep/ part-jumbotron {
+  background-color: #efefef;
+}
 
 html /deep/ part-jumbotron h1,
 html /deep/ part-jumbotron h2 {
@@ -51,4 +60,34 @@ html /deep/ part-jumbotron h1 {
   text-transform: capitalize;
   font-size: 50px;
   font-weight: 400;
+}
+
+section,
+html /deep/ section {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+section .container h3,
+html /deep/ section .container h3 {
+  text-align: center;
+  font-weight: 100;
+  margin-bottom: 20px;
+}
+
+section .container p,
+section .container ul li,
+section .container a,
+html /deep/ section .container p,
+html /deep/ section .container ul li,
+html /deep/ section .container a {
+  font-weight: 100;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+section.parallax,
+html /deep/ section.parallax {
+  height: 300px;
+  background-color: #efefef;
 }

@@ -19,7 +19,7 @@
       }
 
       x-jumbotron::shadow #jumbotron {
-        height: auto;
+        height: 300px;
       }
       x-jumbotron::shadow #overlay {
         background-color: #efefef;
@@ -30,81 +30,105 @@
         color: #333;
       }
 
-      /*part-email /deep/ .colors {
-        color: #101017;
-        background-color: #CEE379;
-      }*/
+      #numbers {
+        background-color: #efefef;
+      }
+      #numbers .number {
+        text-align: center;
+      }
+      #numbers .item {
+        display: block;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 14px;
+      }
+      #numbers .value {
+        display: block;
+        font-size: 50px;
+      }
+      
+      #weekly h4 {
+        text-align: center;
+      }
+
+      .learn {
+        margin-bottom: 20px;
+      }
+
+      .logo {
+        width: 100px;
+        height: 100px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
     </style>
 
     <part-header id="header"></part-header>
     <x-jumbotron>
-      <h1>HackFaber program</h1>
+      <h1>Programma</h1>
     </x-jumbotron>
 
-<section>
+    <section>
       <div class="container">
-        <h3>Quali sfide affronterai</h3>
-        <div>
+        <h3>cosa imparerai</h3>
+        <div class="learn">
           <p>Lo sviluppo Web in un ecosistema JavaScript composto dalle più recenti tecnologie:</p>
           <ul class="list-inline list-unstyled">
-            <li><a is="x-link" href="/glossary#javascript">JavaScript</a></li>
-            <li><a is="x-link" href="/glossary#html5">HTML5</a></li>
-            <li><a is="x-link" href="/glossary#css3">CSS3</a></li>
+            <template repeat="{{ item in data.platform }}">
+              <li><div class="logo" style="background-image: url('http://localhost:8080/hackfaber.com/client/images/logo-{{ item.name }}.jpg')"><div></li>
+            </template>
           </ul>
         </div>
-        <div>
-          <p>I più moderni e diffusi strumenti di <em>code revision</em>, piattaforme Web di <em>social coding</em>, e metodi di <em>sviluppo collaborativo</em>:</p>
+        <div class="learn">
+          <p>I più moderni e diffusi strumenti di <em>revisione del codice</em> e metodi di <em>sviluppo collaborativo</em>:</p>
           <ul class="list-inline list-unstyled">
-            <li><a is="x-link" href="/glossary#git">git</a></li>
-            <li><a is="x-link" href="/glossary#github">GitHub</a></li>
-            <li><a is="x-link" href="/glossary#npm">npm</a></li>
-            <li><a is="x-link" href="/glossary#bower">Bower</a></li>
-            <li><a is="x-link" href="/glossary#gulp">Gulp</a></li>
-            <li><a is="x-link" href="/glossary#yeoman">Yeoman</a></li>
-            <li><a is="x-link" href="/glossary#duo">DUO</a></li>
-            <li><a is="x-link" href="/glossary#grunt">Grunt</a></li>
+            <template repeat="{{ item in data.tools }}">
+              <li><div class="logo" style="background-image: url('http://localhost:8080/hackfaber.com/client/images/logo-{{ item.name }}.jpg')"><div></li>
+            </template>
           </ul>
         </div>
-        <div>
+        <div class="learn">
           <p>I <em>framework frontend</em> e le librerie JavaScript per una <em>user interface</em> e <em>user experience</em> avanzata:</p>
           <ul class="list-inline list-unstyled">
-            <li><a is="x-link" href="/glossary#jquery">jQuery</a></li>
-            <li><a is="x-link" href="/glossary#bootstrap">Bootstrap</a></li>
-            <li><a is="x-link" href="/glossary#three">Three.js</a></li>
-            <li><a is="x-link" href="/glossary#raphael">Raphael.js</a></li>
-            <li><a is="x-link" href="/glossary#d3">D3.js</a></li>
-            <li><a is="x-link" href="/glossary#angular">Angular.js</a></li>        
-            <li><a is="x-link" href="/glossary#polymer">Polymer.js</a></li>
+            <template repeat="{{ item in data.frontend }}">
+              <li><div class="logo" style="background-image: url('http://localhost:8080/hackfaber.com/client/images/logo-{{ item.name }}.jpg')"><div></li>
+            </template>
           </ul>
         </div>
-        <div>
+        <div class="learn">
           <p>I <em>framework backend</em> più diffusi e più potenti, <em>database noSQL</em> leader di mercato, librerie JavaScript per la comunicazione realtime:</p>
           <ul class="list-inline list-unstyled">
-            <li><a is="x-link" href="/glossary#node">Node.js</a></li>
-            <li><a is="x-link" href="/glossary#">Express.js</a></li>
-            <li><a is="x-link" href="/glossary#mongodb">MongoDB</a></li>
-            <li><a is="x-link" href="/glossary#loopback">LoopBack</a></li>
-            <li><a is="x-link" href="/glossary#">MongoDB</a></li>
-            <li><a is="x-link" href="/glossary#">Redis</a></li>
-            <li><a is="x-link" href="/glossary#">Socket.io</a></li>
+            <template repeat="{{ item in data.backend }}">
+              <li><div class="logo" style="background-image: url('http://localhost:8080/hackfaber.com/client/images/logo-{{ item.name }}.jpg')"><div></li>
+            </template>
           </ul>
         </div>
       </div>
     </section>
 
-    <section>
+    <section id="numbers">
       <div class="container">
-        <ul class="list-inline list-unstyled">
-          <li>12 settimane</li>
-          <li>6 giorni a settimana</li>
-          <li>9 ore al giorno</li>
-        </ul>
+        <div class="row">
+          <div class="col-sm-4 number">
+            <span class="value">12</span>
+            <span class="item">settimane</span>            
+          </div>
+          <div class="col-sm-4 number">
+            <span class="value">6</span>
+            <span class="item">giorni/settimana</span>            
+          </div>
+          <div class="col-sm-4 number">
+            <span class="value">9</span>
+            <span class="item">ore/giorno</span>            
+          </div>
+        </div>
       </div>
     </section>
 
-    <section>
+    <section id="daily">
       <div class="container">
-        <h3>Programma giornaliero</h3>
+        <h3>giorno per giorno</h3>
         <ul>
           <li>live coding</li>
           <li>hack/pair programming</li>
@@ -117,9 +141,9 @@
       </div>
     </section>
 
-    <section>
+    <section id="weekly">
       <div class="container">
-        <h3>Settimana per settimana</h3>
+        <h3>settimana per settimana</h3>
         <div class="row">
           <div class="col-sm-4">
             <h4>1-5</h4> 
@@ -160,34 +184,54 @@
 
     <section>
       <div class="container">
-        <h3>costi</h3>
-        <div></div>
-        <button class="btn btn-lg btn-success">applica ora</button>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <h3>Vuoi contribuire al progetto?</h3>
-        <p>Lascia la tua email</p>
+        <h3>Sei interessato al progetto?</h3>
+        <p>
+          Scrivi a <a href="mailto:hello@hackfaber.com">hello@hackfaber.com</a> oppure lascia la tua email.
+        </p>
       </div>
       <part-email sender="collaborator"></part-email>
     </section>
 
-    <section>
-      <div class="container">
-        <h3>Sei interessato al progetto?</h3>
-        <p>
-          Sei una società interessato a sponsorizzare una borsa di studio? scrivi a 
-          <span><a href="mailto:hello@hackfaber.com">hello@hackfaber.com</a></span>
-        </p>
-      </div>
-    </section>
 
     <part-footer></part-footer>
   </template>
   <script>
     Polymer('page-program', {
+
+      data: {
+        platform: [
+          { name: 'js', label: 'JavaScript' },
+          { name: 'html5', label: 'HTML5' },
+          { name: 'css3', label: 'CSS3' }
+        ],
+        tools: [
+          { name: 'bash', label: 'Bash' },
+          { name: 'git', label: 'Git' },
+          { name: 'github', label: 'GitHub' },
+          { name: 'npm', label: 'npm' },
+          { name: 'bower', label: 'Bower' },
+          { name: 'gulp', label: 'Gulp' },
+          { name: 'yeoman', label: 'Yeoman' },
+          { name: 'duo', label: 'DUO' },
+          { name: 'grunt', label: 'Grunt' }
+        ],
+        frontend: [
+          { name: 'jquery', label: 'jQuery' },
+          { name: 'bootstrap', label: 'Bootstrap' },
+          { name: 'raphael', label: 'Raphael.js' },
+          { name: 'd3', label: 'D3.js' },
+          { name: 'angular', label: 'Angular.js' },
+          { name: 'polymer', label: 'Polymer.js' }
+        ],
+        backend: [
+          { name: 'nodejs', label: 'Node.js' },
+          { name: 'express', label: 'Express.js' },
+          { name: 'mongodb', label: 'MongoDB' },
+          { name: 'strongloop', label: 'StrongLoop' },
+          // { name: 'redis', label: 'Redis' },
+          // { name: 'socketio', label: 'Socket.io' }
+        ],
+      }
 
     });
   </script>

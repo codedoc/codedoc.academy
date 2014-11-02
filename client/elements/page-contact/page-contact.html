@@ -19,7 +19,7 @@
       }
 
       x-jumbotron::shadow #jumbotron {
-        height: auto;
+        height: 300px;
       }
       x-jumbotron::shadow #overlay {
         background-color: #efefef;
@@ -29,33 +29,29 @@
         padding-bottom: 10px;
         color: #333;
       }
-
-      /*part-email /deep/ .colors {
-        color: #101017;
-        background-color: #CEE379;
-      }*/
     </style>
 
     <part-header id="header"></part-header>
     <x-jumbotron>
-      <h1>Contattaci</h1>
-      <h2>Siamo lieti di risponderti</h2>
+      <h1>Contatti</h1>
     </x-jumbotron>
 
+<!--
     <section>
       <div id="contacts" class="container">
         <a href="mailto:hello@hackfaber.com">hello@hackfaber.com</a>
       </div>
     </section>
+-->
 
     <section>
       <div id="social" class="container">
         <ul class="list-inline list-unstyled">
-          <li>Facebook</li>
-          <li>Google+</li>
-          <li>Twitter</li>
-          <li>GitHub</li>
-          <li>Pinterest</li>
+          <li><a href="http://www.facebook.com/hackfaber">Facebook</a></li>
+          <li><a href="https://plus.google.com/103565757324042093272/about">Google+</a></li>
+          <li><a href="http://twitter.com/hackfaber">Twitter</a></li>
+          <li><a href="http://github.com/hackfaber">GitHub</a></li>
+          <li><a href="http://www.pinterest.com/hackfaber/">Pinterest</a></li>
         </ul>
       </div>
     </section>
@@ -63,9 +59,9 @@
     <section>
       <div class="container">
         <h3>Ti interessa il progetto?</h3>
-        <p>Lascia la tua email</p>
+        <p>Scrivici ad <a href="mailto:hello@hackfaber.com">hello@hackfaber.com</a> oppure lascia la tua email.</p>
       </div>
-       <part-email sender="listener"></part-email>
+      <part-email sender="listener"></part-email>
     </section>
 
     <part-footer></part-footer>
