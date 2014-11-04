@@ -25,6 +25,8 @@
       x-jumbotron::shadow #jumbotron {
         height: 600px;
         text-shadow: 0px 0px 4px #555;
+        background-image: url('../../images/env.jpg');
+        background-attachment: fixed;
       }
       x-jumbotron::shadow #container {
         padding-top: 200px;
@@ -84,6 +86,12 @@
       #founders h3 a {
         font-size: 24px;
       }
+
+      #rome {
+        background-image: url('../../images/roma.jpg');
+        background-size: cover;
+        background-attachment: fixed;
+      }
     </style>
 
     <part-header></part-header>
@@ -107,11 +115,6 @@
 
     <section>
       <div class="container">
-<!--         
-        <div id="flag">
-          <span id="ita"></span>
-        </div>
- -->
         <div class="col-sm-8 col-sm-push-2">
           <h3>La prima in Italia</h3>
           <p>
@@ -128,17 +131,21 @@
       </div>
     </section>
 
-    <section class="parallax"></section>
+    <section id="rome" class="parallax"></section>
 
     <section>
       <div class="container">
         <div class="col-sm-8 col-sm-push-2">
           <h3>Location</h3>
           <p>
-            <strong>HackFaber</strong> è basato a Roma. Stiamo passando al vaglio diverse possibili location, poichè cerchiamo un luogo accogliente e luminoso nel quale i nostri studenti possano applicarsi …
+            <strong>HackFaber</strong> è basata a Roma. Stiamo selezionando la location migliore tra diverse soluzioni. 
+            <!-- poichè cerchiamo un luogo accogliente e luminoso nel quale i nostri studenti possano applicarsi … -->
           </p>
           <p>
-            A breve pubblicheremo il risultato della nostra ricerca, organizzando un meetup nella location designata! Non dimenticare di lasciare la tua email per rimanere aggiornato.        
+            A breve organizzeremo un meetup nella location scelta! 
+          </p>
+          <p>
+            Rimani in contatto, scrivici a <a href="mailto:hello@hackfaber.com">hello@hackfaber.com</a> o lascia la tua email.
           </p>
         </div>
       </div>

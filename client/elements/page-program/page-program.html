@@ -52,11 +52,14 @@
       }
 
       .learn {
-        margin-bottom: 20px;
+        margin-bottom: 40px;
+      }
+      .learn p {
+        margin-bottom: 0px;
       }
 
       .logo {
-        width: 100px;
+        width: 120px;
         height: 100px;
         background-size: contain;
         background-repeat: no-repeat;
@@ -73,33 +76,59 @@
       <div class="container">
         <h3>cosa imparerai</h3>
         <div class="learn">
+          <h4>Fondamenti</h4>
           <p>Lo sviluppo Web in un ecosistema JavaScript composto dalle più recenti tecnologie:</p>
           <ul class="list-inline list-unstyled">
-            <template repeat="{{ item in data.platform }}">
-              <li><div class="logo" style="background-image: url('../../images/logo-{{ item.name }}.jpg')"><div></li>
+            <template repeat="{{ item in data.base }}">
+              <li><a href="/glossary#{{ item.name }}">{{ item.label }}</a></li>
+            </template>
+          </ul>
+          <ul class="list-inline list-unstyled text-center">
+            <template repeat="{{ item in data.base }}">
+              <li>
+                <div class="logo" style="background-image: url('../../images/logo-{{ item.name }}.jpg')"><div>
+              </li>
             </template>
           </ul>
         </div>
         <div class="learn">
-          <p>I più moderni e diffusi strumenti di <em>revisione del codice</em> e metodi di <em>sviluppo collaborativo</em>:</p>
+          <h4>Frameworks di frontend</h4>
+          <p>I <em>framework frontend</em> JavaScript e CSS e le librerie JavaScript per la <em>grafica vettoriale</em>:</p>
           <ul class="list-inline list-unstyled">
-            <template repeat="{{ item in data.tools }}">
-              <li><div class="logo" style="background-image: url('../../images/logo-{{ item.name }}.jpg')"><div></li>
+            <template repeat="{{ item in data.frontend }}">
+              <li><a href="/glossary#{{ item.name }}">{{ item.label }}</a></li>
             </template>
           </ul>
-        </div>
-        <div class="learn">
-          <p>I <em>framework frontend</em> e le librerie JavaScript per una <em>user interface</em> e <em>user experience</em> avanzata:</p>
-          <ul class="list-inline list-unstyled">
+          <ul class="list-inline list-unstyled text-center">
             <template repeat="{{ item in data.frontend }}">
               <li><div class="logo" style="background-image: url('../../images/logo-{{ item.name }}.jpg')"><div></li>
             </template>
           </ul>
         </div>
         <div class="learn">
-          <p>I <em>framework backend</em> più diffusi e più potenti, <em>database noSQL</em> leader di mercato, librerie JavaScript per la comunicazione realtime:</p>
+          <h4>Frameworks di backend</h4>
+          <p>I <em>framework backend</em> più diffusi e i <em>database noSQL</em> leader di mercato:</p>
           <ul class="list-inline list-unstyled">
             <template repeat="{{ item in data.backend }}">
+              <li><a href="/glossary#{{ item.name }}">{{ item.label }}</a></li>
+            </template>
+          </ul>
+          <ul class="list-inline list-unstyled text-center">
+            <template repeat="{{ item in data.backend }}">
+              <li><div class="logo" style="background-image: url('../../images/logo-{{ item.name }}.jpg')"><div></li>
+            </template>
+          </ul>
+        </div>
+        <div class="learn">
+          <h4>Strumenti di sviluppo</h4>
+          <p>I più moderni e diffusi strumenti per la <em>revisione</em> e la <em>gestione del codice</em> e lo <em>sviluppo collaborativo</em>:</p>
+          <ul class="list-inline list-unstyled">
+            <template repeat="{{ item in data.tools }}">
+              <li><a href="/glossary#{{ item.name }}">{{ item.label }}</a></li>
+            </template>
+          </ul>
+          <ul class="list-inline list-unstyled text-center">
+            <template repeat="{{ item in data.tools }}">
               <li><div class="logo" style="background-image: url('../../images/logo-{{ item.name }}.jpg')"><div></li>
             </template>
           </ul>
@@ -199,37 +228,37 @@
     Polymer('page-program', {
 
       data: {
-        platform: [
+        base: [
           { name: 'js', label: 'JavaScript' },
           { name: 'html5', label: 'HTML5' },
           { name: 'css3', label: 'CSS3' }
         ],
         tools: [
-          { name: 'bash', label: 'Bash' },
-          { name: 'git', label: 'Git' },
+          // { name: 'bash', label: 'Bash' },
+          // { name: 'git', label: 'Git' },
           { name: 'github', label: 'GitHub' },
           { name: 'npm', label: 'npm' },
           { name: 'bower', label: 'Bower' },
-          { name: 'gulp', label: 'Gulp' },
-          { name: 'yeoman', label: 'Yeoman' },
           { name: 'duo', label: 'DUO' },
+          { name: 'yeoman', label: 'Yeoman' },
+          { name: 'gulp', label: 'Gulp' },
           { name: 'grunt', label: 'Grunt' }
         ],
         frontend: [
           { name: 'jquery', label: 'jQuery' },
-          { name: 'bootstrap', label: 'Bootstrap' },
-          { name: 'raphael', label: 'Raphael.js' },
-          { name: 'd3', label: 'D3.js' },
           { name: 'angular', label: 'Angular.js' },
-          { name: 'polymer', label: 'Polymer.js' }
+          { name: 'polymer', label: 'Polymer.js' },
+          { name: 'bootstrap', label: 'Bootstrap' },
+          // { name: 'raphael', label: 'Raphael.js' },
+          { name: 'd3', label: 'D3.js' }
         ],
         backend: [
           { name: 'nodejs', label: 'Node.js' },
           { name: 'express', label: 'Express.js' },
-          { name: 'mongodb', label: 'MongoDB' },
           { name: 'strongloop', label: 'StrongLoop' },
-          // { name: 'redis', label: 'Redis' },
-          // { name: 'socketio', label: 'Socket.io' }
+          { name: 'mongodb', label: 'MongoDB' },
+          { name: 'redis', label: 'Redis' },
+          { name: 'socketio', label: 'Socket.io' }
         ],
       }
 
