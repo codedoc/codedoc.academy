@@ -82,7 +82,7 @@ html /deep/ section .container p,
 html /deep/ section .container ul li,
 html /deep/ section .container a {
   font-weight: 100;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.75;
 }
 

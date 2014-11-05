@@ -29,6 +29,15 @@
         padding-bottom: 10px;
         color: #333;
       }
+
+      #founders .picture {
+        height: 400px;
+        margin-bottom: -100px;
+        background-image: url('../../images/founders.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
     </style>
 
     <part-header id="header"></part-header>
@@ -38,13 +47,34 @@
     </x-jumbotron>
 
     <section>    
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-10 col-sm-push-1">
+            <h3>Storia</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </div>          
+        </div>
+      </div>
+    </section>
+
+    <section>
       <div id="founders" class="container">
-        <ul class="list-unstyled list-inline">
+        <h3>Fondatori</h3>
+        <ul class="list-unstyled list-inline text-center">
           <li>Enrico Marino</li>
           <li>Federico Spini</li>
         </ul>
+        <div class="picture"></div>
       </div>
     </section>
+
 
     <section>
       <div class="container">

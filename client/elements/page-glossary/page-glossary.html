@@ -40,7 +40,7 @@
 
     <section>
       <div class="container">
-        <template repeat="item in list">
+        <template repeat="{{ item in list }}">
           <div class="item">
             <label>{{ item.name }}</label>
             <p>{{ item.description }}</p>
@@ -59,7 +59,88 @@
       list: [
         {
           name: 'JavaScript',
-          description: 'JavaScript is the language of the web.'
+          description: 'JavaScript è il linguaggio di programmazione del Web.',
+          links: []
+        },
+        {
+          name: 'HTML5',
+          description: "L'HyperText Markup Language (HTML) (traduzione letterale: linguaggio a marcatori per ipertesti), in informatica è il linguaggio di markup solitamente usato per la formattazione di documenti ipertestuali disponibili nel World Wide Web sotto forma di pagine web. L'HTML5 è un linguaggio di markup per la strutturazione delle pagine web, e da Ottobre 2014 pubblicato come W3C Recommendation."
+        },
+        {
+          name: 'CSS3',
+          description: "Il CSS (Cascading Style Sheets, in italiano fogli di stile), in informatica, è un linguaggio usato per definire la formattazione di documenti HTML, XHTML e XML ad esempio i siti web e relative pagine web. Le regole per comporre il CSS sono contenute in un insieme di direttive (Recommendations) emanate a partire dal 1996 dal W3C."
+        },
+        {
+          name: 'GitHub',
+          description: "GitHub è un servizio web di hosting per lo sviluppo di progetti software che usa il sistema di controllo di versione Git. GitHub offre diversi piani per repository privati sia a pagamento, sia gratuiti, molto utilizzati per lo sviluppo di progetti open-source. Dal maggio 2011, GitHub è il più popolare repository di progetti open source."
+        },
+        {
+          name: 'NPM',
+          description: "NPM è il gestore di pacchetti per la piattaforma node JavaScript. Mette i moduli in modo che node possa trovare, e gestisce i conflitti di dipendenza in modo intelligente. È estremamente configurabile per supportare un'ampia varietà di casi di utilizzo. Più comunemente, viene utilizzato per pubblicare, scoprire, installare e sviluppare programmi di nodo."
+        },
+        {
+          name: 'Bower',
+          description: "Bower è un famoso package manager by Twitter e il suo funzionamento è simile al npm di node.js. Permette di risolvere il problema delle librerie che utilizziamo in modo ripetuto nei nostri progetti (es. jquery). Con Bower è possibile scaricare le librerie, aggiornarle o rimuoverle direttamente da linea di comando, senza bisogno di andare di volta in volta a scaricare le nuove versioni dai rispettivi siti. Bower inoltre crea un file Json che memorizza le dipendenze della nostra webapp, evitandoci cosi di doverle caricare e scaricare nella nostra repository di Git: sarà sufficiente lanciare da linea di comando “bower install” per ritrovarcele al loro posto."
+        },
+        {
+          name: 'Duo',
+          description: ""
+        },
+        {
+          name: 'Yeoman',
+          description: "Con la moltitudine di strumenti che abbiamo oggigiorno a disposizione per creare applicazioni web, non è sempre facile immaginare come farli funzionare a dovere insieme. Yeoman si pone l’obbiettivo di risolvere questo problema per noi, incorporando al suo interno tre importanti tools: Yo, Bower e Grunt. Essi, interagendo tra loro in modo a noi quasi del tutto trasparente, ci permettono di creare velocemente applicazioni web moderne. Yo unisce Bower e Grunt e fornisce un set di script per creare impalcature (scaffolding) per webapp, con lo scopo di includere autonomamente le varie best practices attualmente in uso. E’ quindi possibile creare con un comando, ad esempio lo scaffolding di una webapp per AngularJS, oppure più semplicemente un HTML5 Boilerplate con Bootstrap."
+        },
+        {
+          name: 'Gulp',
+          description: "Gulp, come Grunt, è un task manager."
+        },
+        {
+          name: 'Grunt',
+          description: "Grunt è un task runner. Permette di configurare operazioni di routine (come la minificazione e la concatenazione di file) e di eseguirle in cascata in maniera automatica. Tra le varie funzioni di Grunt ricordiamo inoltre quella di preprocessare i nostri file scritti in less oppure sass."
+        },
+        {
+          name: 'jQuery',
+          description: "jQuery è una libreria di funzioni Javascript, per le applicazioni web, che si propone come obiettivo quello di semplificare la programmazione lato client delle pagine HTML. È un software liberamente distribuibile e gratuito, come previsto dalla licenza MIT. La sintassi di jQuery è studiata per semplificare la navigazione dei documenti, la selezione degli elementi DOM, creare animazioni, gestire eventi e implementare funzionalità AJAX."
+        },
+        {
+          name: 'Angular.js',
+          description: ""
+        },
+        {
+          name: 'Polymer.js',
+          description: ""
+        },
+        {
+          name: 'Bootstrap',
+          description: ""
+        },
+        {
+          name: "D3",
+          description: ""
+        },
+        {
+          name: "Node.js",
+          description: ""
+        },
+        {
+          name: "Express.js",
+          description: ""
+        },
+        {
+          name: "StrongLoop",
+          description: ""
+        },
+        {
+          name: "MongoDB",
+          description: ""
+        },
+        {
+          name: "Redis",
+          description: ""
+        },
+        {
+          name: "Socket.io",
+          description: ""
         }
       ]
 
