@@ -51,6 +51,10 @@
         text-align: center;
       }
 
+      #daily h4 {
+        text-align: center;
+      }
+
       .learn {
         margin-bottom: 40px;
       }
@@ -64,6 +68,10 @@
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
+      }
+
+      #email::shadow #email {
+        border: 1px solid #aaa;
       }
     </style>
 
@@ -159,15 +167,40 @@
       <div class="container">
         <h3>giorno per giorno</h3>
         <ul>
-          <li>live coding</li>
+          <li>coffe start</li>
+          <li>live code/lecture</li>
           <li>hack/pair programming</li>
-          <li>gym</li>
           <li>launch</li>
-          <li>learn code</li>
-          <li>dinner</li>
-          <li>meetup/events</li>
+          <li>hack/pair programming</li>
+          <li>auto revision/packaging/deploy</li>
+          <li>gym</li>
+          <li>dinner/meetups/events</li>
         </ul>
       </div>
+<!-- 
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-1">
+            <h4>8-9</h4>
+          </div>
+          <div class="col-sm-3">
+            <h4>9-13</h4>
+          </div>
+          <div class="col-sm-1">
+            <h4>13-14</h4>
+          </div>
+          <div class="col-sm-3">
+            <h4>14-18</h4>
+          </div>
+          <div class="col-sm-2">
+            <h4>18-20</h4>
+          </div>
+          <div class="col-sm-2">
+            <h4>20-22</h4>
+          </div>
+        </div>
+      </div>
+-->
     </section>
 
     <section id="weekly">
@@ -217,8 +250,8 @@
         <p>
           Scrivi a <a href="mailto:hello@hackfaber.com">hello@hackfaber.com</a> oppure lascia la tua email.
         </p>
+        <part-email id="email" sender="collaborator"></part-email>
       </div>
-      <part-email sender="collaborator"></part-email>
     </section>
 
 

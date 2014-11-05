@@ -70,9 +70,27 @@ html /deep/ section {
 
 section .container h3,
 html /deep/ section .container h3 {
-  text-align: center;
-  font-weight: 100;
-  margin-bottom: 20px;
+  /*padding-left: 15px;*/
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+section .container h4,
+html /deep/ section .container h4 {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+section .container h3:before,
+html /deep/ section .container h3:before {
+  content: '/';
+  color: #33f;
+  font-weight: 800;
+  font-size: 26px;
+  vertical-align: -2px;
+  padding-right: 3px;
 }
 
 section .container p,
