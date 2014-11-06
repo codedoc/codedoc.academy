@@ -1,9 +1,9 @@
 
 var fs = require('fs');
 var join = require('path').join;
-var basepath = process.env.PWD;
+var basepath = process.env.PWD;`
 var emails = {
-  interested: fs.readFileSync(join(basepath, 'assets/emails/interested.tmpl')),
+  applicant: fs.readFileSync(join(basepath, 'assets/emails/applicant.tmpl')),
   collaborator: fs.readFileSync(join(basepath, 'assets/emails/collaborator.tmpl')),
   listener: fs.readFileSync(join(basepath, 'assets/emails/listener.tmpl'))
 };
