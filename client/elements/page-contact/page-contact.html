@@ -3,6 +3,7 @@
 <link rel="import" href="../part-footer/part-footer.html">
 <link rel="import" href="../part-header/part-header.html">
 <link rel="import" href="../part-email/part-email.html">
+<link rel="import" href="../form-contact/form-contact.html">
 <polymer-element name="page-contact">
   <template>
     <style>
@@ -52,11 +53,23 @@
       </div>
     </section>
 
+    <!-- <section> -->
+      <!-- <div class="container"> -->
+        <!-- <h3>Ti interessa il progetto?</h3> -->
+        <!-- <p>Scrivici ad <a href="mailto:hello@hackfaber.com">hello@hackfaber.com</a> oppure lascia la tua email.</p> -->
+        <!-- <part-email id="email" sender="listener"></part-email> -->
+      <!-- </div> -->
+    <!-- </section> -->
+
     <section>
       <div class="container">
         <h3>Ti interessa il progetto?</h3>
-        <p>Scrivici ad <a href="mailto:hello@hackfaber.com">hello@hackfaber.com</a> oppure lascia la tua email.</p>
-        <part-email id="email" sender="listener"></part-email>
+        <p>Scrivici ad <a href="mailto:hello@hackfaber.com">hello@hackfaber.com</a>.</p>
+        <div class="row">
+          <div class="col-sm-6">
+            <form-contact></form-contact>
+          </div>
+        </div>
       </div>
     </section>
 

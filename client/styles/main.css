@@ -133,6 +133,7 @@ html /deep/ section .container div ul>li {
   text-indent: -1em;
 }
 
+/*
 section .container div ul>li:before,
 html /deep/ section .container div ul>li:before {
   content: '/';
@@ -142,3 +143,4 @@ html /deep/ section .container div ul>li:before {
   font-weight: 600;
   padding-right: 5px;
 }
+*/

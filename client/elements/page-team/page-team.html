@@ -3,6 +3,7 @@
 <link rel="import" href="../part-footer/part-footer.html">
 <link rel="import" href="../part-header/part-header.html">
 <link rel="import" href="../part-email/part-email.html">
+<link rel="import" href="../form-contact/form-contact.html">
 <polymer-element name="page-team">
   <template>
     <style>
@@ -127,7 +128,12 @@
         <p>
           HACK/FABER è un progetto molto ambizioso, e siamo alla continua ricerca di collaboratori. Se il progetto ti piace e pensi di poter aiutare in qualche modo riempi il form indicado come intendi aiutarci.
         </p>
-        <part-email id="email" sender="collaborator"></part-email>
+        <!-- <part-email id="email" sender="collaborator"></part-email> -->
+        <div class="row">
+          <div class="col-sm-6">
+            <form-contact></form-contact>            
+          </div>          
+        </div>
       </div>
     </section>
 
