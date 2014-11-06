@@ -29,20 +29,16 @@
         padding-bottom: 10px;
         color: #333;
       }
+
+      #email::shadow #email {
+        border: 1px solid #aaa;
+      }
     </style>
 
     <part-header id="header"></part-header>
     <x-jumbotron>
       <h1>Contatti</h1>
     </x-jumbotron>
-
-<!--
-    <section>
-      <div id="contacts" class="container">
-        <a href="mailto:hello@hackfaber.com">hello@hackfaber.com</a>
-      </div>
-    </section>
--->
 
     <section>
       <div id="social" class="container">
@@ -60,8 +56,8 @@
       <div class="container">
         <h3>Ti interessa il progetto?</h3>
         <p>Scrivici ad <a href="mailto:hello@hackfaber.com">hello@hackfaber.com</a> oppure lascia la tua email.</p>
+        <part-email id="email" sender="listener"></part-email>
       </div>
-      <part-email sender="listener"></part-email>
     </section>
 
     <part-footer></part-footer>

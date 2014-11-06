@@ -31,6 +31,17 @@
         padding-bottom: 10px;
         color: #333;
       }
+
+      .item {
+        margin-bottom: 40px;
+      }
+      .item a {
+        /*color: #333;*/
+      }
+      .item a:hover {
+        text-decoration: none;
+        /*color: #333;*/
+      }
     </style>
 
     <part-header></part-header>
@@ -40,10 +51,15 @@
 
     <section>
       <div class="container">
-        <template repeat="{{ item in list }}">
+        <template repeat="{{ item in list | order }}">
           <div class="item">
-            <label>{{ item.name }}</label>
+            <h4>{{ item.name }}</h4>
             <p>{{ item.description }}</p>
+            <ul>
+              <template repeat="{{ link in item.links }}">
+                <li><a href="{{ link }}">{{ link }}</a></li>
+              </template>
+            </ul>
           </div>
         </template>  
       </div>
@@ -56,67 +72,123 @@
   <script>
     Polymer('page-glossary', {
 
+      order: function (list) {
+        return list.sort(function (a, b) {
+          return a.name.localeCompare(b.name);
+        });
+      },
+
       list: [
         {
           name: 'JavaScript',
           description: 'JavaScript è il linguaggio di programmazione del Web.',
-          links: []
+          links: [
+            'https://developer.mozilla.org/en/docs/Web/JavaScript',
+            'http://en.wikipedia.org/wiki/JavaScript'
+          ]
         },
         {
           name: 'HTML5',
-          description: "L'HyperText Markup Language (HTML) (traduzione letterale: linguaggio a marcatori per ipertesti), in informatica è il linguaggio di markup solitamente usato per la formattazione di documenti ipertestuali disponibili nel World Wide Web sotto forma di pagine web. L'HTML5 è un linguaggio di markup per la strutturazione delle pagine web, e da Ottobre 2014 pubblicato come W3C Recommendation."
+          description: "L'HTML (HyperText Markup Language, in italiano linguaggio a marcatori per ipertesti), è il linguaggio usato per la formattazione di documenti ipertestuali disponibili nel World Wide Web sotto forma di pagine web. L'HTML5 è l'ultima versione del linguaggio, diventato Standard del W3C (Word Wide Web Consorsium).",
+          links: [
+            'https://developer.mozilla.org/en-US/docs/Web/HTML',
+            'http://en.wikipedia.org/wiki/HTML'
+          ]
         },
         {
           name: 'CSS3',
-          description: "Il CSS (Cascading Style Sheets, in italiano fogli di stile), in informatica, è un linguaggio usato per definire la formattazione di documenti HTML, XHTML e XML ad esempio i siti web e relative pagine web. Le regole per comporre il CSS sono contenute in un insieme di direttive (Recommendations) emanate a partire dal 1996 dal W3C."
+          description: "Il CSS (Cascading Style Sheets, in italiano fogli di stile) è un linguaggio usato per definire la formattazione e lo stile (colori, dimensioni, posizioni, carattere, ...) di documenti HTML. Le regole per comporre il CSS sono contenute in un insieme di direttive (Recommendations) emanate a partire dal 1996 dal W3C.",
+          links: [
+            'https://developer.mozilla.org/en-US/docs/Web/CSS',
+            'http://en.wikipedia.org/wiki/Cascading_Style_Sheets'
+          ]
         },
         {
           name: 'GitHub',
-          description: "GitHub è un servizio web di hosting per lo sviluppo di progetti software che usa il sistema di controllo di versione Git. GitHub offre diversi piani per repository privati sia a pagamento, sia gratuiti, molto utilizzati per lo sviluppo di progetti open-source. Dal maggio 2011, GitHub è il più popolare repository di progetti open source."
+          description: "GitHub è un servizio web di hosting per lo sviluppo di progetti software che usa il sistema di controllo di versione Git. GitHub offre diversi piani per repository privati sia a pagamento, sia gratuiti, molto utilizzati per lo sviluppo di progetti open-source. Dal maggio 2011, GitHub è il più popolare repository di progetti open source.",
+          links: [
+            'https://github.com/'
+          ]
         },
         {
           name: 'NPM',
-          description: "NPM è il gestore di pacchetti per la piattaforma node JavaScript. Mette i moduli in modo che node possa trovare, e gestisce i conflitti di dipendenza in modo intelligente. È estremamente configurabile per supportare un'ampia varietà di casi di utilizzo. Più comunemente, viene utilizzato per pubblicare, scoprire, installare e sviluppare programmi di nodo."
+          description: "NPM è il gestore di pacchetti per la piattaforma node JavaScript. Mette i moduli in modo che node possa trovare, e gestisce i conflitti di dipendenza in modo intelligente. È estremamente configurabile per supportare un'ampia varietà di casi di utilizzo. Più comunemente, viene utilizzato per pubblicare, scoprire, installare e sviluppare programmi di nodo.",
+          links: [
+            'https://www.npmjs.org/'
+          ]
         },
         {
           name: 'Bower',
-          description: "Bower è un famoso package manager by Twitter e il suo funzionamento è simile al npm di node.js. Permette di risolvere il problema delle librerie che utilizziamo in modo ripetuto nei nostri progetti (es. jquery). Con Bower è possibile scaricare le librerie, aggiornarle o rimuoverle direttamente da linea di comando, senza bisogno di andare di volta in volta a scaricare le nuove versioni dai rispettivi siti. Bower inoltre crea un file Json che memorizza le dipendenze della nostra webapp, evitandoci cosi di doverle caricare e scaricare nella nostra repository di Git: sarà sufficiente lanciare da linea di comando “bower install” per ritrovarcele al loro posto."
+          description: "Bower è un famoso package manager by Twitter e il suo funzionamento è simile al npm di node.js. Permette di risolvere il problema delle librerie che utilizziamo in modo ripetuto nei nostri progetti (es. jquery). Con Bower è possibile scaricare le librerie, aggiornarle o rimuoverle direttamente da linea di comando, senza bisogno di andare di volta in volta a scaricare le nuove versioni dai rispettivi siti. Bower inoltre crea un file Json che memorizza le dipendenze della nostra webapp, evitandoci cosi di doverle caricare e scaricare nella nostra repository di Git: sarà sufficiente lanciare da linea di comando “bower install” per ritrovarcele al loro posto.",
+          links: [
+            'http://bower.io/'
+          ]
         },
         {
           name: 'Duo',
-          description: ""
+          description: "Duo, come Bower, è un package manager per frontend, ispirato da Component, Browserify e Go.",
+          links: [
+            'http://duojs.org/'
+          ]
         },
         {
           name: 'Yeoman',
-          description: "Con la moltitudine di strumenti che abbiamo oggigiorno a disposizione per creare applicazioni web, non è sempre facile immaginare come farli funzionare a dovere insieme. Yeoman si pone l’obbiettivo di risolvere questo problema per noi, incorporando al suo interno tre importanti tools: Yo, Bower e Grunt. Essi, interagendo tra loro in modo a noi quasi del tutto trasparente, ci permettono di creare velocemente applicazioni web moderne. Yo unisce Bower e Grunt e fornisce un set di script per creare impalcature (scaffolding) per webapp, con lo scopo di includere autonomamente le varie best practices attualmente in uso. E’ quindi possibile creare con un comando, ad esempio lo scaffolding di una webapp per AngularJS, oppure più semplicemente un HTML5 Boilerplate con Bootstrap."
+          description: "Con la moltitudine di strumenti che abbiamo oggigiorno a disposizione per creare applicazioni web, non è sempre facile immaginare come farli funzionare a dovere insieme. Yeoman si pone l’obbiettivo di risolvere questo problema per noi, incorporando al suo interno tre importanti tools: Yo, Bower e Grunt. Essi, interagendo tra loro in modo a noi quasi del tutto trasparente, ci permettono di creare velocemente applicazioni web moderne. Yo unisce Bower e Grunt e fornisce un set di script per creare impalcature (scaffolding) per webapp, con lo scopo di includere autonomamente le varie best practices attualmente in uso. E’ quindi possibile creare con un comando, ad esempio lo scaffolding di una webapp per AngularJS, oppure più semplicemente un HTML5 Boilerplate con Bootstrap.",
+          links: [
+            'http://yeoman.io/',
+            'http://en.wikipedia.org/wiki/Yeoman_(computing)'
+          ]
         },
         {
           name: 'Gulp',
-          description: "Gulp, come Grunt, è un task manager."
+          description: "Gulp, come Grunt, è un task manager.",
+          links: [
+            'http://gulpjs.com/'
+          ]
         },
         {
           name: 'Grunt',
-          description: "Grunt è un task runner. Permette di configurare operazioni di routine (come la minificazione e la concatenazione di file) e di eseguirle in cascata in maniera automatica. Tra le varie funzioni di Grunt ricordiamo inoltre quella di preprocessare i nostri file scritti in less oppure sass."
+          description: "Grunt è un task runner. Permette di configurare operazioni di routine (come la minificazione e la concatenazione di file) e di eseguirle in cascata in maniera automatica. Tra le varie funzioni di Grunt ricordiamo inoltre quella di preprocessare i nostri file scritti in less oppure sass.",
+          links: [
+            'http://gruntjs.com/'
+          ]
         },
         {
           name: 'jQuery',
-          description: "jQuery è una libreria di funzioni Javascript, per le applicazioni web, che si propone come obiettivo quello di semplificare la programmazione lato client delle pagine HTML. È un software liberamente distribuibile e gratuito, come previsto dalla licenza MIT. La sintassi di jQuery è studiata per semplificare la navigazione dei documenti, la selezione degli elementi DOM, creare animazioni, gestire eventi e implementare funzionalità AJAX."
+          description: "jQuery è una libreria di funzioni Javascript, per le applicazioni web, che si propone come obiettivo quello di semplificare la programmazione lato client delle pagine HTML. È un software liberamente distribuibile e gratuito, come previsto dalla licenza MIT. La sintassi di jQuery è studiata per semplificare la navigazione dei documenti, la selezione degli elementi DOM, creare animazioni, gestire eventi e implementare funzionalità AJAX.",
+          links: [
+            'http://jquery.com/',
+            'http://en.wikipedia.org/wiki/JQuery'
+          ]
         },
         {
           name: 'Angular.js',
-          description: ""
+          description: "AngularJS è un framework open-source, manutenuto da Google, che permette lo sviluppo di single-page applications. Il suo obiettivo è di estendere le applicazioni Web con il paradigma MVC (Model View Controller), per rendere rapidi sia lo sviluppo che il test.",
+          links: [
+            'https://angularjs.org/',
+            'http://en.wikipedia.org/wiki/AngularJS'
+          ]
         },
         {
           name: 'Polymer.js',
-          description: ""
+          description: "I Web Components inaugurano una nuova era per lo sviluppo Web basato su elementi personalizzati, incapsulati e interoperabili che estendono il linguaggio HTML stesso. Costruito in cima a questi nuovi standard, Polymer.js rende più facile e veloce creare qualsiasi cosa, da un pulsante a una completa applicazione Web, su desktop, mobile e non solo.",
+          links: [
+            'https://www.polymer-project.org/',
+            'http://webcomponents.org/'
+          ]
         },
         {
           name: 'Bootstrap',
-          description: ""
+          description: "Bootstrap è il più popolare framework CSS per lo sviluppo di progetti Web responsive e mobile.",
+          links: [
+            'http://getbootstrap.com/'
+          ]
         },
         {
           name: "D3",
-          description: ""
+          description: "",
+          links: [
+          ]
         },
         {
           name: "Node.js",
