@@ -28,28 +28,47 @@
         padding-bottom: 10px;
         color: #333;
       }
-      x-jumbotron h1:before {
+      x-jumbotron #cit {
+        position: relative;
+      }
+      x-jumbotron #cit h1:before {
         content: '“';
         font-family: fantasy;
         font-size: 54px;
       }
-      x-jumbotron h1:after {
+      x-jumbotron #cit h1:after {
         content: '”';
         font-family: fantasy;
         font-size: 54px;
       }
-      x-jumbotron .author {
-        font-size: 11px;
+      x-jumbotron #cit .author {
+        font-size: 13px;
         position: absolute;
-        left: 612px;
-        top: 195px;
+        left: 322px;
+        top: 52px;
+        font-variant: small-caps;
+        font-family: serif;
+      }
+      #dictionary {
+        background-color: #E9DDD6;
+        font-size: 14px;
+      }
+      #dictionary span.author {
+        font-variant: small-caps;
+        font-family: serif;
+        font-size: 18px;
+      }
+      #dictionary strong.def {
+        font-size: 17px;
       }
     </style>
 
     <part-header id="faber"></part-header>
     <x-jumbotron>
-      <h1><em>Hŏmo făbĕr fortūnæ suæ</em></h1>
-      <div class="author">Appius Claudius Caecus</div>
+      <div id="cit">
+        <h1><em>Hŏmo făbĕr fortūnæ suæ</em></h1>
+        <div class="author">Appius Claudius Caecus</div>
+      </div>
     </x-jumbotron>
 
     <section>
@@ -94,16 +113,16 @@
       </div>
     </section>
 
-    <section id="dictioanry">
+    <section id="dictionary">
       <div class="container">
-        <h3>făbĕr</h3>
-        <div>
-        ...
-        </div>
-        <h3>hackfăbĕr</h3>
-        <div>
-        ...
-        </div>
+      <ol>
+        <li>
+          <strong class="def">făbĕr</strong>, <em>fabri</em>, m. • gen. pl. per lo più <em>fabrum</em> <strong> 1 artigiano, artefice, fabbro:</strong> <em>faber tignarius</em>, falegname; <em>faber ferrarius</em>, fabbro ferraio; <em>faber aerarius</em>, bronzista; <em>fabros se missurum et domum meam disturbaturum esse dixit</em>, disse che avrebbe mandato degli operai e avrebbe demolito la mia casa, <span class="author">Cic.</span>; <em>faber aedium</em>, architetto, <span class="author">Gell.</span>; <em>faber marmoris</em>, scultore in marmo, <span class="author">Hor.</span>; <em>fabris omnium generum in pubblica officina inclusis</em>, mentre gli atrigiani di tutti i mestieri stavano radunati nelle pubbliche officine, <span class="author">Liv.</span>; <em>fabri navalium</em>, carpentieri, <span class="author">Liv.</span>; <em>hack faber</em>, artigiano del codice, <span class="author">Spi., Mar.</span>;<strong> TRASL.</strong> <em>proba materies datast (= data est), si probum adhibes fabrum</em>, la metria che (vi) ho offerto è buona, se ci metti un fabbro che sappia il fatto suo, <span class="author">Pl.</span> <strong> LOCUZ. PARTIC.</strong> <em>faber est suae quisque fortunae</em>, ciascuno è artefice della propria sorte, <span class="author">ps. Sall.</span> <strong>2 soldati del genio:</strong> <em>praefectus fabrorum</em>, comandante del genio, <span class="author">Caes., Nep.</span>; <strong>3 orata</strong> (pesce), <span class="author">Plin.</span> e altri.
+        </li>
+        <li>
+          <strong class="def">făbĕr</strong>, <em>fabra, fabrum</em>, agg • superl. <em>faberrimus, a, um</em>: <strong> fatto con arte, ingegnoso,</strong> <span class="author">Ov., Apul.</span>.
+        </li>
+      </ol>
       </div>
     </section>
 
