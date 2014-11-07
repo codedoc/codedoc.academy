@@ -9,7 +9,7 @@ ga('send', 'pageview');
 // app boot
 window.logFlags = window.logFlags || {};
 const host_re = /^[www\.]?hackfaber\.com/;
-var hostname = window.hostname;
+var hostname = window.location.hostname;
 var host_query = host_re.exec(hostname);
 var env = host_query && host_query[0] === 'hackfaber.com' ? 'production' : 'develop';
 var production = function () { return env === 'production'; };
