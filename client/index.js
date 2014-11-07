@@ -9,7 +9,7 @@ ga('send', 'pageview');
 // app boot
 window.logFlags = window.logFlags || {};
 const host_re = /^[www\.]?hackfaber\.com/;
-var hostname = window.hostname;
+var hostname = window.localhost.hostname;
 var host_query = host_re.exec(hostname);
 var env = host_query && host_query[0] === 'hackfaber.com' ? 'production' : 'develop';
 var production = function () { return env === 'production'; };
@@ -18,10 +18,6 @@ var app = document.getElementById('app');
 
 var open = function (page_name, details) {
   return function (context) {
-    if (production()) {
-      ga('send', 'pageview');
-    }
-
     var element = document.createElement(page_name);
     context.element = element;
     while (app.firstChild) app.removeChild(app.firstChild);
@@ -34,6 +30,9 @@ var open = function (page_name, details) {
 var onchange = function (event) {
   var url = event.detail;
   page.show(url);
+  if (production()) {
+    ga('send', 'pageview');
+  }
 };
 
 app.addEventListener('click link', onchange);
