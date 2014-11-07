@@ -33,7 +33,7 @@ var onchange = function (event) {
   var url = event.detail;
   page.show(url);
   if (production()) {
-    _gaq.push(['_trackPageview']);
+    _gaq.push(['_trackPageview', url]);
   }
 };
 
