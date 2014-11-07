@@ -1,9 +1,27 @@
+// google analytics
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-56515755-1', 'auto');
+ga('send', 'pageview');
+
+// app boot
 window.logFlags = window.logFlags || {};
+const host_re = /^[www\.]?hackfaber\.com/;
+var hostname = window.hostname;
+var host_query = host_re.exec(hostename);
+var env = host_query && host_query[0] === 'hackfaber.com' ? 'production' : 'develop';
+var production = function () { return env === 'production'; };
 
 var app = document.getElementById('app');
 
 var open = function (page_name, details) {
   return function (context) {
+    if (production()) {
+      ga('send', 'pageview');
+    }
+
     var element = document.createElement(page_name);
     context.element = element;
     while (app.firstChild) app.removeChild(app.firstChild);
