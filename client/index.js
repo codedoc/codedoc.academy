@@ -3,10 +3,8 @@
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-56515755-1', 'auto');
 
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-56515755-1']);
-_gaq.push(['_trackPageview']);
 
 // app boot
 window.logFlags = window.logFlags || {};
@@ -33,7 +31,7 @@ var onchange = function (event) {
   var url = event.detail;
   page.show(url);
   if (production()) {
-    _gaq.push(['_trackPageview', url]);
+    ga('send', 'pageview', url);
   }
 };
 
