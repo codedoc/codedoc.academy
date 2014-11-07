@@ -9,10 +9,10 @@ ga('create', 'UA-56515755-1', 'auto');
 // app boot
 window.logFlags = window.logFlags || {};
 const host_re = /^[www\.]?hackfaber\.com/;
-var hostname = window.location.hostname;
+var hostname = location.hostname;
 var host_query = host_re.exec(hostname);
 var env = host_query && host_query[0] === 'hackfaber.com' ? 'production' : 'develop';
-var production = function () { /* return env === 'production'; */ return true;};
+var production = function () { return env === 'production'; };
 
 var app = document.getElementById('app');
 
