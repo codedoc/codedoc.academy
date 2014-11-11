@@ -70,7 +70,6 @@ html /deep/ section {
 
 section .container h3,
 html /deep/ section .container h3 {
-  /*padding-left: 15px;*/
   font-weight: 600;
   margin-bottom: 10px;
   font-size: 20px;
@@ -123,8 +122,6 @@ html /deep/ section .container div h4:before {
 section .container div ul,
 html /deep/ section .container div ul {
   list-style: none;
-/*  margin-left: 0;
-  padding-left: 0;*/
 }
 
 section .container div ul>li,
