@@ -18,7 +18,7 @@
         font-weight: 100;
       }
       #jumbotron h2 {
-        font-weight: 100;
+        font-weight: 400;
         margin-bottom: 100px;
       }
       #jumbotron h4 {
@@ -26,7 +26,6 @@
       }
       #jumbotron::shadow #jumbotron {
         height: 100vh;
-        /*text-shadow: 0px 0px 4px #555;*/
         background-image: url('../../images/env.jpg');
         background-attachment: fixed;
       }
@@ -41,9 +40,6 @@
       #header::shadow #navbar {
         background-color: transparent;
         padding-top: 20px;
-      }
-      #header::shadow a {
-        /*text-shadow: 0px 0px 4px #555;*/
       }
       #header::shadow #navbar a {
         color: white;
@@ -94,22 +90,29 @@
         background-position: center;
       }
 
-      #founders h3 a {
-        /*font-size: 24px;*/
-      }
-
       #rome {
         background-image: url('../../images/roma.jpg');
         background-size: cover;
         background-attachment: fixed;
+      }
+
+      @media (max-width: 768px) {
+        #jumbotron h1 {
+          font-size: 50px;
+        }
+        #jumbotron h2 {
+          font-size: 18px;
+          /*text-transform: uppercase;*/
+          margin-bottom: 20px;
+        }        
       }
     </style>
 
     <part-header id="header"></part-header>
 
     <x-jumbotron id="jumbotron">
-      <h1>HACK/FABER</h1>
-      <h2>Diventa un Ingegnere Web in 12 settimane</h2>
+      <h1>HACKFABER</h1>
+      <h2>Diventa Ingegnere Web in 12 settimane</h2>
       <h4>Sei interessato? Lascia una email</h4>
       <part-email></part-email>
     </x-jumbotron>
@@ -118,12 +121,14 @@
       <div class="container">
         <h3>Partecipa alla prima code academy in Italia</h3>
         <div>
-          <h4>Impara a dominare le più recenti tecnologie per lo sviluppo Web.</h4>
-          <h4>Segui la scuola intensiva di 12 settimane focalizzata su JavaScript e acquisisci <a is="x-link" href="/faber#qualcosa">il know-how professionale più richiesto del momento</a>.</h4>
-          <h4> Enrtra a far parte attivamente della community di web developer più dinamica e stimolante sulla piazza.</h4>
-          <!-- <p>
-            Impara a dominare le più recenti tecnologie per lo sviluppo Web. Segui la scuola intensiva di 12 settimane focalizzata su JavaScript e acquisisci il know-how professionale più richiesto del momento. Enrtra a far parte attivamente della community di web developer più dinamica e stimolante  sulla piazza.
-          </p> -->
+          <h4>Impara a dominare le più recenti tecnologie per lo sviluppo Web</h4>
+          <h4>Acquisisci il <a is="x-link" href="/faber#qualcosa">know-how professionale</a> più richiesto del momento</h4>
+          <h4>Entra a far parte attivamente della community Web developer più dinamica e stimolante sulla piazza</h4>
+          <!-- 
+            <p>
+              Impara a dominare le più recenti tecnologie per lo sviluppo Web. Segui la scuola intensiva di 12 settimane focalizzata su JavaScript e acquisisci il know-how professionale più richiesto del momento. Enrtra a far parte attivamente della community di web developer più dinamica e stimolante  sulla piazza.
+            </p>
+          -->
         </div>
       </div>
     </section>
@@ -158,53 +163,69 @@
           </div>
         </div>
         <div class="text-right">
-          <a is="x-link" href="/program">Scopri in maggior dettaglio il programma e il metodo didattico</a>          
+          <a is="x-link" href="/program">Scopri in maggior dettaglio il programma e il metodo didattico</a>  
         </div>
       </div>
     </section>
 
     <section>
       <div class="container">
-        <h3>Code Academy, metodo di successo</h3>
+        <h3>Code Academy</h3>
         <div>
           <p>
-            <strong>HACK/FABER</strong> è la prima code academy in Italia.
+            <strong>HACKFABER</strong> è la prima code academy in Italia.
           </p>
           <p>
-            Con "Code Academy" si indica più che un luogo un metodo di insegnamento basato su un approccio pratico/progettuale. È un percoso dalla durata contenuta nel tempo che richiede molto impegno e costanza da parte dello studente. Studente che non è mai solo nel fronteggiare gli ostacoli che inevitabilmente vengono a presentarsiglisi. La soluzione Code Academy arriva come risposta alle criticità che è possibile identificare negli altre vie percorribili per l'apprendimento dello sviluppo web: il percorso universitario, corsi online, corsi non intensivi, imparare da autodidatti.
+            Con "Code Academy" si indica più che un luogo un metodo di insegnamento basato su un approccio pratico/progettuale. 
+            <br>
+            È un percoso dalla durata contenuta nel tempo che richiede molto impegno e costanza da parte dello studente. 
+            <br>
+            Lo studente che non è mai solo nel fronteggiare gli ostacoli che inevitabilmente vengono a presentarsiglisi. 
+            <br>
+            La soluzione Code Academy arriva come risposta alle criticità che è possibile identificare negli altre vie percorribili per l'apprendimento dello sviluppo web:
           </p>
-          <div>
-            <h4>percorso universitario: ingegneria informatica</h4>
-            <ul>
-              <li>nella totalità degli corsi di studi in ingegneria informatica in italiana non è identificabile un percorso universitario chiaro che focalizzi sullo sviluppo Web</li>
-              <li>la distanza tra i docenti e lo studente è spesso incolmabile portando lo studente che incontra un ostacolo ad una immobilità didattica</li>
-              <li>il percorso dura al meno 5 anni, la relativa "giovinezza" del percorso di studi e della disciplina in generale comporta una scarsa definizione di carriere didattiche univoche, e lo studente spesso deve fare lo slalom tra discipline completamente diverse</li>
-              <li>non più del 10% delle cose imparate è quindi effettivamente usato nel mondo del lavoro</li>
-            </ul>
+          <div class="row">
+            <div class="col-sm-3">
+              <h4>percorso universitario</h4>
+              <p>
+                <!-- nella totalità degli corsi di studi in ingegneria informatica in italiana non è identificabile un percorso universitario chiaro che focalizzi sullo sviluppo Web -->
+                <!-- <br> -->
+                <!-- la distanza tra i docenti e lo studente è spesso incolmabile portando lo studente che incontra un ostacolo ad una immobilità didattica -->
+                <!-- <br> -->
+                il percorso universitario dura almeno 3 anni, la relativa "giovinezza" del percorso di studi e della disciplina in generale comporta una scarsa definizione di carriere didattiche univoche, e lo studente spesso deve fare lo slalom tra discipline completamente diverse
+                <!-- <br> -->
+                <!-- non più del 10% delle cose imparate è quindi effettivamente usato nel mondo del lavoro -->
+              </p>
+            </div>
+            <div class="col-sm-3">
+              <h4>corsi on-line</h4>
+              <p>
+                completi ma spersonalizzanti, trattandosi di un prodotto standard non esiste margine di adattamento allo studente;
+                <br>
+                il web è un oceano è facile perdersi, come dice il detto "Nessun vento è favorevole al marinaio che non sa dove andare"
+              </p>
+            </div>
+            <div class="col-sm-3">
+              <h4>corsi del weekend</h4>
+              <p>
+                è l'immersione completa in un ecosistema stimolante per un periodo di tempo consistente che permette all'apprendimento di sedimentare e diventare conoscenza
+                <br>
+                corsi dalla durata troppo breve possono introdurre un argomento (molto specifico), certamente non esaurirlo, perdendo totalmete il carattere di completezza
+              </p>
+            </div>
+            <div class="col-sm-3">
+              <h4>percorso autodidatta</h4>
+              <p>
+                "...e ora da dove comincio??" è la tipica domanda di chi affronta da autodidatta lo studio di una nuova tecnologia informatica. Senso di spaesatezza, forte determinazione, autodisciplina, e grande il grande impegno richiesto sono i principali ostacoli che scoraggiano i più
+                <br>
+                può essere un percorso di successo se abinato ad una solita conoscenza di base (ad esempio una laurea in ingengeria informatica)
+              </p>
+            </div>
+            <p>
+              Nessuna delle precedenti alternative può sostituire la continua e premurosa attenzione di un tutor esperto che applicando un <a is="x-link" href="/program">metodo consolidato</a> utilizzato da <a is="x-link" href="/faber">oltre 140 academy nel mondo</a> ti permette di specializzarti nello sviluppo Web con suggerimenti ed esercizi personalizzati.
+            </p>
           </div>
-          <div>
-            <h4>corsi on-line</h4>
-            <ul>
-              <li>completi ma spersonalizzanti, trattandosi di un prodotto standard non esiste margine di adattamento allo studente</li>
-              <li>il web è un oceano è facile perdersi, come dice il detto "Nessun vento è favorevole al marinaio che non sa dove andare"</li>
-            </ul>
-          </div>
-          <div>
-            <h4>corsi non intensivi, dal weekend al mese di durata</h4>
-            <ul>
-              <li>è l'immersione completa in un ecosistema stimolante per un periodo di tempo consistente che permette all'apprendimento di sedimentare e diventare conoscenza</li>
-              <li>corsi dalla durata troppo breve possono introdurre un argomento (molto specifico), certamente non esaurirlo, perdendo totalmete il carattere di completezza</li>
-            </ul>
-          </div>
-          <div>
-            <h4>autodidatti</h4>
-            <ul>
-              <li>"...e ora da dove comincio??" è la tipica domanda di chi affronta da autodidatta lo studio di una nuova tecnologia informatica. Senso di spaesatezza, forte determinazione, autodisciplina, e grande il grande impegno richiestosono i principali ostacoli che scoraggiano i più</li>
-              <li>può essere un percorso di successo se abinato ad una solita conoscenza di base (ad esempio se arriva dopo una laurea in ingengeria informatica), richiedendo quindi ben oltre 5 anni per essere completato</li>
-            </ul>
-          </div>
-          <p>Nessuna delle precedenti alternative può sostituire la continua e premurosa attenzione di un tutor esperto che applicando un <a is="x-link" href="/program"> metodo consolidato</a> utilizzato da <a is="x-link" href="/faber">oltre 140 academy nel mondo</a> ti permette di specializzarti nello sviluppo Web con suggerimenti ed esercizi personalizzati.</p>
-        </div>
+        </div>          
       </div>
     </section>
 
