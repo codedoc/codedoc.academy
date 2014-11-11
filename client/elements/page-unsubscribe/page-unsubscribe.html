@@ -1,0 +1,45 @@
+<link rel="import" href="../part-footer/part-footer.html">
+<link rel="import" href="../part-header/part-header.html">
+<link rel="import" href="../../components/core-ajax/core-ajax.html">
+
+<polymer-element name="page-unsubscribe" attributes="code">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <part-header id="header"></part-header>
+
+    <template if="{{ result === 'ok' }}">
+      <h2>Ciao, ci dispiace di averti perso!</h2>
+      <h3>In qualunque momento puoi iscriverti di nuovo compilando la form in <a is="xlink" href="/">"homepage</a>.</h3>
+    </template>
+
+    <core-ajax
+      auto
+      method="POST"
+      url="/api/Pings/unsubscribe"
+      handleAs="json"
+      params='{"code": "{{ code }}"}'
+      on-core-response="{{ on_response }}"
+      on-core-error="{{ on_error }}">
+    </core-ajax>
+
+    <part-footer></part-footer>
+  </template>
+  <script>
+    Polymer('page-unsubscribe', {
+
+      result: '',
+
+      on_response: function () {
+        this.result = 'ok';
+      },
+
+      on_error: function () {
+        this.result = 'error';
+      }
+    });
+  </script>
+</polymer-element>
