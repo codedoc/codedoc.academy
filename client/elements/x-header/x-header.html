@@ -1,0 +1,159 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../x-link/x-link.html">
+<polymer-element name="x-header">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      #navbar {
+        position: fixed;
+        background-color: #efefef;
+        border: none;
+        border-radius: 0px;
+        width: 100%;
+        z-index: 1;
+        -webkit-transition: padding-top 1s ease-out;
+        transition: padding-top 1s ease-out;
+        -webkit-transition: background-color 0.5s ease-out;
+        transition: background-color 0.5s ease-out;
+      }
+
+      #navbar #brand {
+        color: #333;
+        text-transform: uppercase;
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: 0.50px;
+        -webkit-transition: color 0.5s ease-out;
+        transition: color 0.5s ease-out;
+      }
+      
+      #navbar #brand:hover, 
+      #navbar #brand:focus {
+        color: #333;
+      }
+      
+      #navbar #collapse {
+        padding-right: 50px;
+        font-size: 14px;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+      }
+      
+      #navbar #links .link {
+        color: #333;
+        font-size: 13px;
+        font-weight: 600;
+        text-decoration: none;
+        text-transform: uppercase;
+        -webkit-transition: color 0.5s ease-out;
+        transition: color 0.5s ease-out;
+      }
+      
+      #navbar #links .link:hover, 
+      #navbar #links .link:focus {
+        color: #777;
+        background-color: transparent;
+        text-decoration: none;
+      }
+
+      #navbar.scrolled {
+        padding-top: 0px !important;
+        background-color: white !important;
+      }
+      #navbar.scrolled #brand {
+        color: #333 !important;
+      }
+      #navbar.scrolled #links .link {
+        color: #333 !important;
+      }
+
+      @media (max-width: 768px) {
+        #navbar {
+          background-color: #fefefe !important;
+        }
+        #navbar #brand,
+        #navbar #links .link {
+          color: #333 !important;
+        }
+        #navbar #button {
+          border: none;
+          background-color: transparent;
+        }
+        #navbar #button:hover {
+          background-color: transparent;
+        }
+        #navbar #button:hover .icon-bar {
+          background-color: #333;
+        }
+      }
+    </style>
+
+    <div id="navbar" class="navbar navbar-default" role="navigation">
+      <div class="container">      
+        <div class="navbar-header">
+          <button id="button" on-click="{{ on_click_button }}" type="button" class="navbar-toggle">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a id="brand" is="x-link" class="navbar-brand" href="{{ brand.url }}">{{ brand.label }}</a> 
+        </div>
+        <div id="collapse" class="collapse navbar-collapse">
+          <ul id="links" class="nav navbar-nav navbar-right">
+            <template repeat="{{ link in links }}">
+              <li><a class="link" is="x-link" href="{{ link.url }}">{{ link.label }}</a></li>
+            </template>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+  </template>
+  <script>
+    Polymer('x-header', {
+
+      scroll_trap: 100,
+
+      ready: function () {
+        this.on_scroll = this.on_scroll.bind(this);
+        this.request_tick = this.request_tick.bind(this);
+        this.update_scroll = this.update_scroll.bind(this);
+        this.on_scroll();
+        window.addEventListener('scroll', this.on_scroll, false);
+      },
+
+      on_click_button: function (event) {
+        this.$.collapse.classList.toggle('in');
+      },
+
+      on_scroll: function () {
+        this.previousScrollY = this.latestKnownScrollY;
+        // IE10 only supports pageYOffset 
+        this.latestKnownScrollY = window.scrollY || window.pageYOffset;
+        this.request_tick();
+      },
+
+      request_tick: function () {
+        if (!this.ticking) {
+          window.requestAnimationFrame(this.update_scroll);
+        }
+        this.ticking = true;
+      },
+
+      update_scroll: function () {
+        this.ticking = false;
+        var currentScrollY = this.latestKnownScrollY;
+        if (currentScrollY > this.scroll_trap) {
+          this.$.navbar.classList.add('scrolled');
+        } else {
+          this.$.navbar.classList.remove('scrolled');
+        }
+      }
+
+    });
+  </script>
+</polymer-element>

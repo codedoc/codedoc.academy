@@ -109,6 +109,7 @@ html /deep/ section.parallax {
   background-color: #efefef;
 }
 
+/*
 section .container div h4:before,
 html /deep/ section .container div h4:before {
   content: '/';
@@ -118,6 +119,7 @@ html /deep/ section .container div h4:before {
   font-size: 22px;
   font-weight: 700;
 }
+*/
 
 section .container div ul,
 html /deep/ section .container div ul {
