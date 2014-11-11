@@ -1,40 +1,85 @@
 <link rel="import" href="../../components/core-ajax/core-ajax.html">
-<polymer-element name="form-contact">
+<polymer-element name="form-contact" attributes="sender">
   <template>
     <style>
       :host {
         display: block;
       }
+
+      #messages {
+        margin-top: 20px;
+      }
+
+      #messages>.error{
+        color: coral;
+      }
+
+      #messages>.ok{
+        color: green;
+      }
     </style>
 
     
-    <core-ajax id="request" method="POST" url="api/ping" handleAs="json" 
-        on-core-response="{{ on_response }}" on-core-error="{{ on_error }}">
+    <core-ajax
+      id="request"
+      method="POST"
+      url="/api/Pings"
+      handleAs="json"
+      on-core-response="{{ on_response }}"
+      on-core-error="{{ on_error }}">
     </core-ajax>
 
-    <form role="form">
+    <form role="form" on-focus="{{ on_focus_form }}">
       <div class="form-group">
         <label for="fullname">Nome</label>
-        <input type="text" class="form-control" id="fullname" placeholder="nome completo">
+        <input type="text" class="form-control" id="fullname" placeholder="nome completo" on-focus="{{ on_focus }}">
       </div>
       <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" placeholder="email">
+        <label id="email_label" for="email">{{ email_label }}</label>
+        <input type="email" class="form-control" id="email" placeholder="email" on-focus="{{ on_focus_email }}">
       </div>
       <div class="form-group">
-        <label for="tel">Telefono</label>
-        <input type="text" class="form-control" id="tel" placeholder="telefono">
+        <label for="phone">Telefono (puoi non metterlo!)</label>
+        <input type="text" class="form-control" id="phone" placeholder="telefono" on-focus="{{ on_focus }}">
       </div>
       <div class="form-group">
-        <label for="message">Lascia un messaggio</label>
-        <textarea class="form-control" id="message" on-keypress="{{ on_keypress }}" placeholder="lascia un messaggio"></textarea>
+        <label for="sender">Dicci in che modo sei interessato al progetto</label>
+        <select id="sender" class="form-control" on-focus="{{ on_focus_email }}">
+          <option value="interested">...</option>
+          <option value="student">mi piacerebbe iscrivermi</option>
+          <option value="collaborator">mi piacerebbe contribuire</option>
+          <option value="interested">voglio solo essere informato su futuri sviluppi</option>
+          <option value="interested">per altre ragioni...</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message">Se vuoi scrivici un messaggio</label>
+        <textarea class="form-control" id="message" on-keypress="{{ on_keypress }}" placeholder="lascia un messaggio" on-focus="{{ on_focus_email }}"></textarea>
       </div>
       <button id="send" class="btn btn-success" on-click="{{ on_click }}" class="btn btn-default">invia</button>
+      <div id="messages">
+        <template if="{{ result === 'ok' }}">
+          <div class="ok">
+            Grazie, a breve dovresti ricevere una email di saluto :)
+          </div>
+        </template>
+        <template if="{{ result === 'error' }}">
+          <div class="error">
+            Qalcosa è andato storto, riprova tra un po' :(
+          </div>
+        </template>
+      </div>
     </form>
 
   </template>
   <script>
     Polymer('form-contact', {
+
+      dirty: false,
+
+      email_label: 'Email',
+
+      result: '',
 
       on_keypress: function (event) {
         if (event.keyCode === 13) {
@@ -43,31 +88,59 @@
       },
 
       on_click: function (event) {
-        var email = this.$.email.value;
-        var fullname = this.$.fullname.value;
-        var message = this.$.message.value;
-        var tel = this.$.tel.value;
+        event.preventDefault();
+        event.stopPropagation();
 
+         if (this.dirty) { return; }
+
+        var $ = this.$;
+        var request = $.request;
+        var email = $.email.value;
+        var fullname = $.fullname.value;
+        var message = $.message.value;
+        var phone = $.phone.value;
+        var sender = $.sender.value;
         var data = {
           email: email,
-          tel: tel,
+          phone: phone,
           fullname: fullname,
-          message: message
+          message: message,
+          sender: sender
         };
 
-        var request = this.$.request;
-        var body = JSON.stringify(data);
+        if (this.$.email.validity.valid && email !== '') {
+          request.params = JSON.stringify(data);
+          request.go();
+        } else {
+          this.dirty = true;
+          this.email_label = "Inserisci un indirizzo email valido!";
+          $.email_label.style.color = 'coral';
+        }
 
-        request.body = body;
-        // request.go();
+        return null;
+      },
+
+      on_focus_email: function (event) {
+        if (!this.dirty) { return; }
+        this.on_focus();
+
+        this.email_label = 'Email';
+        this.dirty = false;
+        this.$.email_label.style.color = 'black';
       },
 
       on_response: function (event) {
-
+        this.result = 'ok';
+        this.$.send.setAttribute('disabled', '');
       },
 
       on_error: function (event) {
-        
+        this.result = 'error';
+      },
+
+      on_focus: function (event) {
+        if (!this.result === 'ok') { return; }
+        this.result = '';
       }
 
     });

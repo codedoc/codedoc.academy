@@ -13,6 +13,8 @@ module.exports = function (Ping) {
 
   Ping.beforeCreate = function (next, ping) {
     ping.created = ping.created || new Date();
+
+    console.log(ping);
     next();
   };
 
