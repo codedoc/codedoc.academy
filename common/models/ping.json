@@ -22,6 +22,12 @@
     },
     "message": {
       "type": "string"
+    },
+    "active": {
+      "type": "boolean"
+    },
+    "unsubscribe_code": {
+      "type": "string"
     }
   },
   "validations": [],
@@ -39,6 +45,13 @@
       "principalId": "$everyone",
       "permission": "ALLOW",
       "property": "create"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "unsubscribe"
     }
   ],
   "methods": []
