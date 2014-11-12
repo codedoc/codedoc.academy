@@ -8,7 +8,7 @@ ga('create', 'UA-56515755-1', 'auto');
 
 // app boot
 window.logFlags = window.logFlags || {};
-const host_re = /^[www\.]?hackfaber\.com/;
+var host_re = /^[www\.]?hackfaber\.com/;
 var hostname = location.hostname;
 var host_query = host_re.exec(hostname);
 var env = host_query && host_query[0] === 'hackfaber.com' ? 'production' : 'develop';
