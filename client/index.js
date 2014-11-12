@@ -46,12 +46,12 @@ app.addEventListener('click link', onchange);
 
 var start = function () {
   page('/', open('page-home'));
+  page('/policy', open('page-policy'));
   page('/contact', open('page-contact'));
-  page('/faber', open('page-faber'));
   page('/glossary', open('page-glossary'));
+  page('/faber', open('page-faber'));
   page('/home', open('page-home'));
   page('/program', open('page-program'));
-  page('/policy', open('page-policy'));
   page('/team', open('page-team'));
   page('/unsubscribe/:code', open('page-unsubscribe'));
   page('*', open('page-home'));
@@ -59,5 +59,5 @@ var start = function () {
 
   console.log('Welcome to HackFaber!');
 };
-
+  
 start();

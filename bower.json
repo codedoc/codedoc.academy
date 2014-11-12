@@ -10,8 +10,7 @@
     "x-jumbotron": "x-element/x-jumbotron#master",
     "x-link": "x-element/x-link#master",
     "x-location": "x-element/x-location#master",
-    "x-bootstrap": "x-element/x-bootstrap#master",
-    "x-ga": "x-element/x-ga#master"
+    "x-bootstrap": "x-element/x-bootstrap#master"
   },
   "devDependencies": {}
 }
