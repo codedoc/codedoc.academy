@@ -15,13 +15,16 @@ app.use(loopback.compress());
 // boot scripts mount components like REST API
 boot(app, __dirname);
 
+// set public dir path
+app.public_dir_path = path.resolve(__dirname, '../client');
+
 // set index.html file path
 app.index_file_path = path.resolve(__dirname, '../client/index.html');
 
 // -- Mount static files here--
 // All static middleware should be registered at the end, as all requests
 // passing the static middleware are hitting the file system
-app.use(loopback.static(path.dirname(app.index_file_path)));
+app.use(loopback.static(app.public_dir_path));
 
 // Requests that get this far won't be handled
 // by any middleware. Convert them into a 404 error
