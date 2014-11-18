@@ -1,0 +1,72 @@
+html /deep/ body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+}
+
+html /deep/ a:hover,
+html /deep/ a:focus {
+  text-decoration: none;
+}
+
+html /deep/ part-jumbotron {
+  background-color: #efefef;
+}
+
+html /deep/ part-jumbotron h1,
+html /deep/ part-jumbotron h2 {
+  text-align: center;
+}
+
+html /deep/ part-jumbotron h1 {
+  text-transform: capitalize;
+  font-size: 50px;
+  font-weight: 400;
+}
+
+html /deep/ section {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+html /deep/ section .container h3 {
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+html /deep/ section .container h4 {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+html /deep/ section .container h3:before {
+  content: '/';
+  color: #355D91;
+  font-weight: 800;
+  font-size: 26px;
+  vertical-align: -2px;
+  padding-right: 3px;
+}
+
+html /deep/ section .container p,
+html /deep/ section .container ul li,
+html /deep/ section .container a {
+  font-weight: 100;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+html /deep/ section.parallax {
+  height: 300px;
+  background-color: #efefef;
+}
+
+html /deep/ section .container div ul {
+  list-style: none;
+}
+
+html /deep/ section .container div ul>li {
+  padding-left: 1em;
+}
