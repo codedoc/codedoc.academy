@@ -22,7 +22,7 @@ var open = function (page_name, details) {
     var property;
     var element = document.createElement(page_name);
     for (property in params) {
-      if (params.hasOwnProperty(property)) {
+      if (isNaN(property)) {
         element.setAttribute(property, params[property]);
       }
     }
