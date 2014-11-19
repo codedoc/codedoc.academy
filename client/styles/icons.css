@@ -9,6 +9,17 @@
   font-style: normal;
 }
 
+.social-icon {
+  width: 2em;
+  height: 2em;
+  border-radius: 2em;
+  line-height: 2.25em;
+  background-color: #efefef;
+  color: white;
+  text-align: center;
+  font-size: 24px;
+}
+
 .socicon {
   position: relative;
   top: 1px;

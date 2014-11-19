@@ -33,6 +33,19 @@
       #email::shadow #email {
         border: 1px solid #aaa;
       }
+
+      #social {
+        text-align: center;
+      }
+      #social .social-icon {
+        font-size: 24px;
+      }
+      #social .social-icon:hover {
+        background-color: #ccc;
+      }
+      #social .social-icon a {
+        color: white;
+      }
     </style>
 
     <part-header id="header"></part-header>
@@ -43,15 +56,31 @@
     <section>
       <div id="social" class="container">
         <ul class="list-inline list-unstyled">
-          <li>
+          <li class="social-icon">
             <a href="http://www.facebook.com/hackfaber">
               <span class="socicon socicon-facebook"></span>
             </a>
           </li>
-          <li><a href="https://plus.google.com/103565757324042093272/about">Google+</a></li>
-          <li><a href="http://twitter.com/hackfaber">Twitter</a></li>
-          <li><a href="http://github.com/hackfaber">GitHub</a></li>
-          <li><a href="http://www.pinterest.com/hackfaber/">Pinterest</a></li>
+          <li class="social-icon">
+            <a href="https://plus.google.com/103565757324042093272/about">
+              <span class="socicon socicon-google"></span>
+            </a>
+          </li>
+          <li class="social-icon">
+            <a href="http://twitter.com/hackfaber">
+              <span class="socicon socicon-twitter"></span>
+            </a>
+          </li>
+          <li class="social-icon">
+            <a href="http://github.com/hackfaber">
+              <span class="socicon socicon-github"></span>
+            </a>
+          </li>
+          <li class="social-icon">
+            <a href="http://www.pinterest.com/hackfaber/">
+              <span class="socicon socicon-pinterest"></span>
+            </a>
+          </li>
         </ul>
       </div>
     </section>
