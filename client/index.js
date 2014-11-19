@@ -57,7 +57,7 @@ var start = function () {
   page('*', open('page-home'));
   page();
 
-  console.log('Welcome to HackFaber!');
+  console.log('Welcome to HACKFABER!');
 };
   
 start();
