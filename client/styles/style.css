@@ -67,8 +67,8 @@ section .container h3:before {
 }
 
 section .container p,
-section .container ul li,
-section .container a {
+/*section .container a,*/
+section .container ul li {
   font-weight: 100;
   font-size: 14px;
   line-height: 1.75;

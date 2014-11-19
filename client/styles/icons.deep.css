@@ -1,0 +1,102 @@
+/*
+@font-face {
+  font-family: 'socicon';
+  src: url('../fonts/socicon-webfont.eot');
+  src: url('../fonts/socicon-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/socicon-webfont.woff') format('woff'),
+       url('../fonts/socicon-webfont.ttf') format('truetype'),
+       url('../fonts/socicon-webfont.svg#sociconregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+*/
+
+html /deep/ .socicon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'socicon';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+html /deep/ .socicon:empty {
+  width: 1em;
+}
+
+html /deep/ .social-icon {
+  width: 2em;
+  height: 2em;
+  border-radius: 2em;
+  line-height: 2.25em !important; 
+  background-color: #efefef;
+  color: white;
+  text-align: center;
+  font-size: 24px;
+}
+
+
+html /deep/ .socicon-easid:before { content: "5"; }
+html /deep/ .socicon-twitter:before { content: "a"; }
+html /deep/ .socicon-facebook:before { content: "b"; }
+html /deep/ .socicon-google:before { content: "c"; }
+html /deep/ .socicon-pinterest:before { content: "d"; }
+html /deep/ .socicon-foursquare:before { content: "e"; }
+html /deep/ .socicon-yahoo:before { content: "f"; }
+html /deep/ .socicon-skype:before { content: "g"; }
+html /deep/ .socicon-yelp:before { content: "h"; }
+html /deep/ .socicon-feedburner:before { content: "i"; }
+html /deep/ .socicon-linkedin:before { content: "j"; }
+html /deep/ .socicon-viadeo:before { content: "k"; }
+html /deep/ .socicon-xing:before { content: "l"; }
+html /deep/ .socicon-myspace:before { content: "m"; }
+html /deep/ .socicon-soundcloud:before { content: "n"; }
+html /deep/ .socicon-spotify:before { content: "o"; }
+html /deep/ .socicon-grooveshark:before { content: "p"; }
+html /deep/ .socicon-lastfm:before { content: "q"; }
+html /deep/ .socicon-youtube:before { content: "r"; }
+html /deep/ .socicon-vimeo:before { content: "s"; }
+html /deep/ .socicon-dailymotion:before { content: "t"; }
+html /deep/ .socicon-vine:before { content: "u"; }
+html /deep/ .socicon-flickr:before { content: "v"; }
+html /deep/ .socicon-500px:before { content: "w"; }
+html /deep/ .socicon-instagram:before { content: "x"; }
+html /deep/ .socicon-wordpress:before { content: "y"; }
+html /deep/ .socicon-tumblr:before { content: "z"; }
+html /deep/ .socicon-blogger:before { content: "A"; }
+html /deep/ .socicon-technorati:before { content: "B"; }
+html /deep/ .socicon-reddit:before { content: "C"; }
+html /deep/ .socicon-dribbble:before { content: "D"; }
+html /deep/ .socicon-stumbleupon:before { content: "E"; }
+html /deep/ .socicon-digg:before { content: "F"; }
+html /deep/ .socicon-envato:before { content: "G"; }
+html /deep/ .socicon-behance:before { content: "H"; }
+html /deep/ .socicon-delicious:before { content: "I"; }
+html /deep/ .socicon-deviantart:before { content: "J"; }
+html /deep/ .socicon-forrst:before { content: "K"; }
+html /deep/ .socicon-play:before { content: "L"; }
+html /deep/ .socicon-zerply:before { content: "M"; }
+html /deep/ .socicon-wikipedia:before { content: "N"; }
+html /deep/ .socicon-apple:before { content: "O"; }
+html /deep/ .socicon-flattr:before { content: "P"; }
+html /deep/ .socicon-github:before { content: "Q"; }
+html /deep/ .socicon-chimein:before { content: "R"; }
+html /deep/ .socicon-friendfeed:before { content: "S"; }
+html /deep/ .socicon-newsvine:before { content: "T"; }
+html /deep/ .socicon-identica:before { content: "U"; }
+html /deep/ .socicon-bebo:before { content: "V"; }
+html /deep/ .socicon-zynga:before { content: "W"; }
+html /deep/ .socicon-steam:before { content: "X"; }
+html /deep/ .socicon-xbox:before { content: "Y"; }
+html /deep/ .socicon-windows:before { content: "Z"; }
+html /deep/ .socicon-outlook:before { content: "1"; }
+html /deep/ .socicon-coderwall:before { content: "2"; }
+html /deep/ .socicon-tripadvisor:before { content: "3"; }
+html /deep/ .socicon-netcodes:before { content: "4"; }
+html /deep/ .socicon-lanyrd:before { content: "7"; }
+html /deep/ .socicon-slideshare:before { content: "8"; }
+html /deep/ .socicon-buffer:before { content: "9"; }
+html /deep/ .socicon-rss:before { content: ","; }
+html /deep/ .socicon-vkontakte:before { content: ";"; }
+html /deep/ .socicon-disqus:before { content: ":"; }
