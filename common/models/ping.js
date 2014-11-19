@@ -47,9 +47,13 @@ module.exports = function (Ping) {
 
   Ping.unsubscribe = function (code, end) {
     Ping.findOne({where: {'unsubscribe_code': code}}, function (err, ping) {
-      //hanle error
+      if (err || !ping) {
+        end(null, false);
+        return;
+      }
+
       ping.updateAttribute('active', false, function (err) {
-        end(null, {ok: true});
+        end(null, true);
       });
     });
   };
