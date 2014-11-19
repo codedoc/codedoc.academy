@@ -36,7 +36,7 @@ module.exports = function (Ping) {
     Gmail.send({
       to: this.email,
       from: 'info@hackfaber.com',
-      subject: 'Ciao, qui HACK/FABER!',
+      subject: 'Ciao, qui HACKFABER!',
       text: emails[this.sender](this),
     }, function(err, mail) {
       if (err) { console.log(err); return; }
